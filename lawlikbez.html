@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Юрликбез для риэлтора - онлайн курс от Вячеслава Щербакова. Изучите правовые основы сделок с недвижимостью, защитите своих клиентов от рисков и мошенничества." />
+  <meta name="keywords" content="юрликбез, риэлтор, недвижимость, курс, обучение, сделки, документы, налоги, риски" />
+  <meta name="author" content="Вячеслав Щербаков" />
+  <meta property="og:title" content="Юрликбез для риэлтора - Онлайн курс" />
+  <meta property="og:description" content="Комплексное обучение правовым аспектам сделок с недвижимостью от эксперта с 20-летним стажем" />
+  <meta property="og:type" content="website" />
+  <title>Юрликбез для риэлтора | Онлайн курс от Вячеслава Щербакова</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3b0764 100%);
+      color: #fff;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Декоративные круги */
+    .circle-decoration {
+      position: fixed;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite;
+    }
+    .circle-1 { top: 10%; left: 5%; width: 300px; height: 300px; }
+    .circle-2 { top: 30%; right: 10%; width: 400px; height: 400px; animation-delay: -5s; }
+    .circle-3 { bottom: 20%; left: 15%; width: 350px; height: 350px; animation-delay: -10s; }
+    .circle-4 { top: 60%; right: 5%; width: 250px; height: 250px; animation-delay: -15s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    /* Карточки */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Кнопки */
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+      color: white;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    .btn-primary:hover::before { left: 100%; }
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.5);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-secondary:hover {
+      border-color: #8B5CF6;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: clamp(1.125rem, 3vw, 1.5rem);
+      color: #d1d5db;
+      margin-bottom: 32px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c084fc;
+      margin-bottom: 24px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 64px;
+    }
+    .stat-card { text-align: center; }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    /* Секции */
+    section {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background: linear-gradient(90deg, #EC4899 0%, transparent 100%);
+      border-radius: 2px;
+    }
+    .section-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #d1d5db;
+      margin-bottom: 64px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* About */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+    }
+    .author-avatar {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .author-avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #1e1b4b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: 800;
+    }
+    .author-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 50%;
+    }
+    .author-info { flex: 1; min-width: 300px; }
+    .author-info h3 { font-size: 2rem; margin-bottom: 8px; }
+    .author-info .subtitle {
+      font-size: 1.25rem;
+      color: #c084fc;
+      margin-bottom: 24px;
+    }
+    .feature-list { list-style: none; }
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: #d1d5db;
+    }
+    .feature-list svg { flex-shrink: 0; margin-top: 2px; }
+
+    .telegram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      font-size: 14px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      margin-top: 16px;
+    }
+    .telegram-link:hover {
+      background: rgba(139, 92, 246, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Modules */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .module-card { position: relative; }
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .module-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .module-title { font-size: 1.25rem; font-weight: 700; }
+    .module-items { list-style: none; }
+    .module-items li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #d1d5db;
+      transition: all 0.3s ease;
+    }
+    .module-items li:hover {
+      background: rgba(139, 92, 246, 0.1);
+      transform: translateX(10px);
+    }
+    .module-items svg { flex-shrink: 0; }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .price-card { position: relative; overflow: hidden; }
+    .price-card.featured {
+      border: 2px solid #EC4899;
+      transform: scale(1.05);
+    }
+    .price-card.featured::before {
+      content: 'ПОПУЛЯРНЫЙ';
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: #EC4899;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+    .price-header h3 { font-size: 1.5rem; margin-bottom: 8px; }
+    .price-header .description {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+    .price-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .price-amount .amount { font-size: 3rem; font-weight: 800; }
+    .price-amount .currency { color: #9ca3af; }
+    .price-period {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 24px;
+    }
+    .price-features { list-style: none; margin-bottom: 32px; }
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+    .price-features svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* Bonuses */
+    .bonuses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .bonus-card { padding: 24px; }
+    .bonus-icon { color: #ec4899; margin-bottom: 16px; }
+    .bonus-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+    .bonus-card p { font-size: 14px; color: #9ca3af; }
+
+    /* CTA */
+    .cta-section { position: relative; overflow: hidden; }
+    .cta-card {
+      text-align: center;
+      padding: 64px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+      z-index: -1;
+    }
+    .cta-card h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+    .cta-card .subtitle {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .cta-footer {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cta-footer p:first-child { color: #9ca3af; margin-bottom: 16px; }
+    .cta-footer p:last-child { font-size: 1.5rem; font-weight: 700; }
+
+    /* Footer */
+    footer {
+      padding: 48px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .footer-section h3.gradient-text { font-size: 1.5rem; }
+    .footer-section p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .footer-section a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-section a:hover { color: #c084fc; }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .footer-bottom p { margin: 8px 0; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .about-content { flex-direction: column; text-align: center; }
+      .author-info { text-align: left; }
+      .price-card.featured { transform: scale(1); }
+      .cta-buttons { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ===== Modal (Popup) ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 8, 30, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .modal {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      background: linear-gradient(160deg, rgba(49, 46, 129, 0.98), rgba(30, 27, 75, 0.99));
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 20px;
+      padding: 36px 32px 28px;
+      box-shadow: 0 30px 80px rgba(139, 92, 246, 0.35);
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.3s ease;
+      color: #fff;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+    .modal-overlay.active .modal { transform: translateY(0) scale(1); }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      color: #cbd5e1;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .modal-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+    .modal-subtitle {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .form-group input::placeholder { color: rgba(255, 255, 255, 0.35); }
+    .form-group input:focus {
+      outline: none;
+      border-color: #8B5CF6;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+    }
+    .form-group input.invalid {
+      border-color: #ec4899;
+      box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+    }
+    .form-error {
+      display: block;
+      font-size: 0.8rem;
+      color: #f9a8d4;
+      margin-top: 6px;
+      min-height: 0;
+    }
+    .form-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+    .form-note strong { color: #c084fc; }
+
+    body.modal-open { overflow: hidden; }
+
+    @media (max-width: 480px) {
+      .modal { padding: 28px 20px 22px; }
+      .modal-title { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Декоративные круги -->
+  <div class="circle-decoration circle-1"></div>
+  <div class="circle-decoration circle-2"></div>
+  <div class="circle-decoration circle-3"></div>
+  <div class="circle-decoration circle-4"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Онлайн курс для риэлторов</span>
+      <h1>
+        <span class="gradient-text">ЮРЛИКБЕЗ</span><br>
+        <span>ДЛЯ РИЭЛТОРА</span>
+      </h1>
+      <p>Комплексное обучение правовым аспектам сделок с недвижимостью</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 48px;">
+        <a href="#pricing" class="btn btn-primary">Начать обучение</a>
+        <a href="#content" class="btn btn-secondary">Узнать больше</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card card">
+          <div class="stat-number gradient-text">20+</div>
+          <p style="color: #d1d5db;">лет на рынке недвижимости</p>
+        </div>
+        <div class="stat-card card">
+          <div class="stat-number gradient-text">1200+</div>
+          <p style="color: #d1d5db;">проведённых сделок</p>
+        </div>
+        <div class="stat-card card">
+          <div class="stat-number gradient-text">6</div>
+          <p style="color: #d1d5db;">недель интенсивного обучения</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section>
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2 class="section-title">Автор курса</h2>
+      </div>
+
+      <div class="card" style="padding: 48px;">
+        <div class="about-content">
+          <div class="author-avatar">
+            <div class="author-avatar-inner">
+              <img src="assets/img/photo.jpg" alt="Вячеслав Щербаков" class="author-avatar-img">
+            </div>
+          </div>
+
+          <div class="author-info">
+            <h3>Вячеслав Щербаков</h3>
+            <p class="subtitle">Брокер по недвижимости, кандидат юридических наук, доцент</p>
+
+            <ul class="feature-list">
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>На рынке недвижимости с 2005 года</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Более 1200 сделок с моим участием</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Дипломированный брокер по недвижимости</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Кандидат юридических наук, доцент – 12 лет преподавал в вузах</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>В прошлом владелец агентства недвижимости</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Автор более 50 публикаций и соавтор книги «Молчать не буду: о недвижимости» 2025 г.</span>
+              </li>
+              <li>
+                <svg width="24" height="24" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Сейчас – юрист, брокер, внедряю ИИ-технологии на рынке недвижимости</span>
+              </li>
+            </ul>
+
+            <a href="https://t.me/VAShcherbakov" target="_blank" rel="noopener noreferrer" class="telegram-link">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-3.146 10.643-3.146 10.643-.226.81-.65.988-1.052.775-.506-.267-7.952-5.885-7.952-5.885l-2.103-.637s-.326-.113-.358-.362c-.032-.248.367-.38.367-.38l13.747-5.196s1.133-.424 1.133.287c0 .374-.636 1.755-.636 1.755z"/></svg>
+              @VAShcherbakov
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Content -->
+  <section id="content">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2 class="section-title">Программа курса</h2>
+        <p class="section-subtitle">Ключевые знания, которые точно пригодятся в работе</p>
+      </div>
+
+      <div class="modules-grid">
+        <div class="card module-card">
+          <div class="module-header">
+            <div class="module-number">1</div>
+            <h3 class="module-title">Как устроены сделки с недвижимостью</h3>
+          </div>
+          <ul class="module-items">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Росреестр, банки, нотариусы, органы опеки</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Основания прав на недвижимость</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Документы для сделок</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Что проверять и куда смотреть</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Дела семейные, дети и пенсионеры</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Как проходит сделка глазами юриста</span></li>
+          </ul>
+        </div>
+
+        <div class="card module-card">
+          <div class="module-header">
+            <div class="module-number">2</div>
+            <h3 class="module-title">Риски, налоги, мошенники</h3>
+          </div>
+          <ul class="module-items">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Неисполнение договора клиентом</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Неисполнение соглашения об авансе (задатке)</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Неисполнение договора купли-продажи</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Судебные споры по сделке</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>«Неожиданные» налоги</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Мошенничество с документами и деньгами</span></li>
+          </ul>
+        </div>
+
+        <div class="card module-card">
+          <div class="module-header">
+            <div class="module-number">3</div>
+            <h3 class="module-title">Как юристы зарабатывают</h3>
+          </div>
+          <ul class="module-items">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Сколько стоят юридические знания и навыки</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Почему клиентам это важно</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Как риэлтор создает дополнительную ценность</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Партнерство с юристом</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2 class="section-title">Тарифы обучения</h2>
+        <p class="section-subtitle">Выберите удобный формат обучения</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="card price-card">
+          <div class="price-header">
+            <h3>Запись курса</h3>
+            <p class="description">Доступ к записям всех вебинаров</p>
+            <div class="price-amount">
+              <span class="amount gradient-text">2 990</span>
+              <span class="currency">₽</span>
+            </div>
+            <p class="price-period">единоразово</p>
+          </div>
+          <ul class="price-features">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Все модули курса в записи</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Доступ на 6 месяцев</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Шаблоны документов</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Чек-листы проверок</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Базовая поддержка</span></li>
+          </ul>
+          <button type="button" class="btn btn-secondary" style="width: 100%;">Купить запись</button>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="card price-card featured">
+          <div class="price-header">
+            <h3>Онлайн курс</h3>
+            <p class="description">Вебинары раз в неделю с разбором кейсов</p>
+            <div class="price-amount">
+              <span class="amount gradient-text">19 900</span>
+              <span class="currency">₽</span>
+            </div>
+            <p class="price-period">6 недель</p>
+          </div>
+          <ul class="price-features">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Живые вебинары каждую неделю</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Разбор реальных кейсов</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Домашние задания с проверкой</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Все бонусы и материалы</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Персональные консультации</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Сертификат о прохождении</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Пожизненный доступ к записям</span></li>
+          </ul>
+          <button type="button" class="btn btn-primary" style="width: 100%;">Записаться на курс</button>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="card price-card">
+          <div class="price-header">
+            <h3>Корпоративное обучение</h3>
+            <p class="description">Обучение для агентств недвижимости (5-20 человек)</p>
+            <div class="price-amount">
+              <span class="amount gradient-text" style="font-size: 2rem;">По запросу</span>
+            </div>
+            <p class="price-period">групповой тариф</p>
+          </div>
+          <ul class="price-features">
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Индивидуальная программа</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Адаптация под вашу специфику</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Онлайн или офлайн формат</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Проработка ваших кейсов</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Все материалы курса</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Сертификаты для команды</span></li>
+            <li><svg width="20" height="20" fill="#ec4899" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Постобучающая поддержка</span></li>
+          </ul>
+          <button type="button" class="btn btn-secondary" style="width: 100%;">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonuses -->
+  <section id="bonus" style="background: rgba(0, 0, 0, 0.2);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <h2 class="section-title">Что вы получите</h2>
+        <p class="section-subtitle">Бонусы и материалы для всех участников курса</p>
+      </div>
+
+      <div class="bonuses-grid">
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3>Шаблоны документов</h3>
+          <p>Готовые образцы договоров и соглашений, проверенные на практике</p>
+        </div>
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+          <h3>Чек-листы проверок</h3>
+          <p>Пошаговые инструкции для безопасного проведения сделок</p>
+        </div>
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+          <h3>Методики работы</h3>
+          <p>Проверенные на практике техники составления и проверки документов</p>
+        </div>
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Экономия времени</h3>
+          <p>Готовые решения для типовых ситуаций в сделках</p>
+        </div>
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <h3>Правовая защита</h3>
+          <p>Знания для защиты интересов клиентов и собственной безопасности</p>
+        </div>
+        <div class="card bonus-card">
+          <div class="bonus-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3>Конкурентное преимущество</h3>
+          <p>Выделяйтесь на рынке за счёт глубоких юридических знаний</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 64px; padding: 48px; text-align: center;">
+        <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;">И это ещё не всё!</h3>
+        <p style="color: #d1d5db; max-width: 700px; margin: 0 auto;">
+          Участники онлайн курса получают доступ к закрытому чату для обмена опытом,
+          дополнительные материалы по мере выхода новых законов и регулярные обновления курса
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="card cta-card">
+        <h2>Готовы начать обучение?</h2>
+        <p class="subtitle">
+          Присоединяйтесь к курсу и станьте экспертом в юридических аспектах
+          сделок с недвижимостью
+        </p>
+
+        <div class="cta-buttons">
+          <button type="button" class="btn btn-primary">Записаться на курс</button>
+          <a href="https://t.me/VAShcherbakov" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg style="display: inline; vertical-align: middle; margin-right: 8px;" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-3.146 10.643-3.146 10.643-.226.81-.65.988-1.052.775-.506-.267-7.952-5.885-7.952-5.885l-2.103-.637s-.326-.113-.358-.362c-.032-.248.367-.38.367-.38l13.747-5.196s1.133-.424 1.133.287c0 .374-.636 1.755-.636 1.755z"/></svg>
+            Задать вопрос
+          </a>
+        </div>
+
+        <div class="cta-footer">
+          <p>Остались вопросы?</p>
+          <p class="gradient-text">Готов ответить на ваши вопросы</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3 class="gradient-text">ЮРЛИКБЕЗ ДЛЯ РИЭЛТОРА</h3>
+          <p>Комплексное обучение правовым аспектам сделок с недвижимостью от эксперта с 20-летним стажем</p>
+        </div>
+        <div class="footer-section">
+          <h3>Контакты</h3>
+          <a href="https://t.me/VAShcherbakov" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.717-3.146 10.643-3.146 10.643-.226.81-.65.988-1.052.775-.506-.267-7.952-5.885-7.952-5.885l-2.103-.637s-.326-.113-.358-.362c-.032-.248.367-.38.367-.38l13.747-5.196s1.133-.424 1.133.287c0 .374-.636 1.755-.636 1.755z"/></svg>
+            @VAShcherbakov
+          </a>
+        </div>
+        <div class="footer-section">
+          <h3>О курсе</h3>
+          <ul>
+            <li><a href="#content">Программа обучения</a></li>
+            <li><a href="#pricing">Тарифы и цены</a></li>
+            <li><a href="#bonus">Бонусные материалы</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2005-2026 Вячеслав Щербаков. Все права защищены.</p>
+        <p>Онлайн курс "Юрликбез для риэлтора"</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL (Popup) ================= -->
+  <div class="modal-overlay" id="enrollModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+      <button class="modal-close" type="button" aria-label="Закрыть">&times;</button>
+
+      <h3 class="modal-title" id="enrollTitle">Запись на курс</h3>
+      <p class="modal-subtitle">Заполните форму — откроется Telegram с готовым сообщением</p>
+
+      <form id="enrollForm" novalidate>
+        <div class="form-group">
+          <label for="enrollName">Ваше имя</label>
+          <input type="text" id="enrollName" name="name" required
+                 placeholder="Иван Иванов" autocomplete="name">
+          <span class="form-error" data-error-for="enrollName"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="enrollPhone">Телефон</label>
+          <input type="tel" id="enrollPhone" name="phone" required
+                 placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel">
+          <span class="form-error" data-error-for="enrollPhone"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">
+          Отправить в Telegram
+        </button>
+
+        <p class="form-note">
+          Мы откроем чат <strong>@VAShcherbakov</strong> с заполненным сообщением — вам останется только нажать «Отправить».
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Анимация появления карточек
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+      if (card.closest('.modal-overlay')) return;
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    /* =========================================================
+       Popup-форма записи на курс → Telegram Direct (личный профиль)
+       ========================================================= */
+    document.addEventListener('DOMContentLoaded', function () {
+      const TG_URL = 'https://t.me/VAShcherbakov?text=';
+
+      const modal = document.getElementById('enrollModal');
+      const form = document.getElementById('enrollForm');
+      const closeBtn = modal.querySelector('.modal-close');
+      const nameInput = document.getElementById('enrollName');
+      const phoneInput = document.getElementById('enrollPhone');
+
+      /* ---- Открытие / закрытие ---- */
+      function openModal() {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        setTimeout(() => nameInput.focus(), 200);
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        clearErrors();
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      /* ---- Кнопки-триггеры ---- */
+      const TRIGGER_TEXTS = [
+        'записаться на курс',
+        'купить запись',
+        'оставить заявку',
+        'записаться'
+      ];
+
+      document.querySelectorAll('button.btn, a.btn').forEach((btn) => {
+        const text = btn.textContent.trim().toLowerCase();
+        const shouldTrigger = TRIGGER_TEXTS.some(t => text.includes(t));
+
+        if (shouldTrigger) {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const priceCard = btn.closest('.price-card');
+            if (priceCard) {
+              const planName = priceCard.querySelector('.price-header h3');
+              if (planName) form.dataset.plan = planName.textContent.trim();
+            } else {
+              delete form.dataset.plan;
+            }
+
+            openModal();
+          });
+        }
+      });
+
+      /* ---- Валидация ---- */
+      function setError(input, message) {
+        input.classList.add('invalid');
+        const errorEl = form.querySelector(`[data-error-for="${input.id}"]`);
+        if (errorEl) errorEl.textContent = message;
+      }
+      function clearError(input) {
+        input.classList.remove('invalid');
+        const errorEl = form.querySelector(`[data-error-for="${input.id}"]`);
+        if (errorEl) errorEl.textContent = '';
+      }
+      function clearErrors() {
+        [nameInput, phoneInput].forEach(clearError);
+      }
+
+      nameInput.addEventListener('input', () => clearError(nameInput));
+      phoneInput.addEventListener('input', () => {
+        clearError(phoneInput);
+        let v = phoneInput.value.replace(/[^\d+]/g, '');
+        if (v.startsWith('8')) v = '+7' + v.slice(1);
+        if (v.startsWith('7') && !v.startsWith('+7')) v = '+7' + v.slice(1);
+        phoneInput.value = v;
+      });
+
+      function validate() {
+        let ok = true;
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (name.length < 2) {
+          setError(nameInput, 'Введите имя (минимум 2 символа)');
+          ok = false;
+        }
+        const digits = phone.replace(/\D/g, '');
+        if (digits.length < 10) {
+          setError(phoneInput, 'Введите корректный номер телефона');
+          ok = false;
+        }
+        return ok;
+      }
+
+      /* ---- Submit → открываем Telegram с предзаполненным текстом ---- */
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const plan = form.dataset.plan || 'Юрликбез для риэлтора';
+
+        const message =
+          'Здравствуйте! Хочу записаться на курс.\n' +
+          'Тариф: ' + plan + '\n' +
+          'Имя: ' + name + '\n' +
+          'Телефон: ' + phone;
+
+        const url = TG_URL + encodeURIComponent(message);
+
+        console.log('Telegram URL:', url);
+
+        // Надёжное открытие через <a>, чтобы не блокировалось браузером
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        // Fallback, если браузер не открыл вкладку
+        const fallbackTimer = setTimeout(() => {
+          showFallbackLink(url);
+        }, 1500);
+
+        window.addEventListener('focus', function onFocus() {
+          clearTimeout(fallbackTimer);
+          window.removeEventListener('focus', onFocus);
+        }, { once: true });
+
+        closeModal();
+        form.reset();
+        delete form.dataset.plan;
+
+        showToast('Telegram открыт — отправьте сообщение в чат 💬');
+      });
+
+      /* ---- Fallback-ссылка ---- */
+      function showFallbackLink(url) {
+        const old = document.getElementById('tgFallback');
+        if (old) old.remove();
+
+        const box = document.createElement('div');
+        box.id = 'tgFallback';
+        box.style.cssText =
+          'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);' +
+          'background:#1e1b4b;border:1px solid #8B5CF6;border-radius:12px;' +
+          'padding:16px 20px;z-index:3000;max-width:90vw;text-align:center;' +
+          'box-shadow:0 10px 40px rgba(139,92,246,0.5);font-size:14px;color:#fff;';
+
+        box.innerHTML =
+          'Не удалось открыть Telegram автоматически.<br>' +
+          '<a href="' + url + '" target="_blank" rel="noopener noreferrer" ' +
+          'style="color:#c084fc;word-break:break-all;font-weight:600;">' +
+          'Нажмите сюда, чтобы открыть чат</a>' +
+          '<button onclick="this.parentElement.remove()" ' +
+          'style="display:block;margin:10px auto 0;background:transparent;' +
+          'border:1px solid rgba(255,255,255,0.3);color:#fff;border-radius:6px;' +
+          'padding:6px 14px;cursor:pointer;font-family:inherit;">Закрыть</button>';
+
+        document.body.appendChild(box);
+      }
+
+      /* ---- Мини-тост ---- */
+      function showToast(text) {
+        const toast = document.createElement('div');
+        toast.textContent = text;
+        Object.assign(toast.style, {
+          position: 'fixed',
+          left: '50%',
+          bottom: '30px',
+          transform: 'translateX(-50%) translateY(20px)',
+          background: 'linear-gradient(135deg, #8B5CF6, #EC4899)',
+          color: '#fff',
+          padding: '14px 24px',
+          borderRadius: '12px',
+          fontSize: '14px',
+          fontWeight: '600',
+          boxShadow: '0 10px 40px rgba(139, 92, 246, 0.5)',
+          zIndex: '2000',
+          opacity: '0',
+          transition: 'all 0.3s ease',
+          pointerEvents: 'none',
+          maxWidth: '90vw',
+          textAlign: 'center'
+        });
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => {
+          toast.style.opacity = '1';
+          toast.style.transform = 'translateX(-50%) translateY(0)';
+        });
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(-50%) translateY(20px)';
+          setTimeout(() => toast.remove(), 400);
+        }, 3500);
+      }
+    });
+  </script>
+</body>
+</html>

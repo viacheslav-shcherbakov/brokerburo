@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Блог — Бюро Вячеслава Щербакова</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="index.html">Главная</a><a href="catalog.html">Каталог</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="blog.html" class="active">Блог</a>    <a href="coaching.html">Обучение</a>
+  </nav>
+</div></header>
+<main class="container">
+  <h1>Личный блог</h1>
+  <p style="color:var(--muted)">Разборы рынка, юридические вопросы, ответы коиентам. Коротко и по делу.</p>
+  <div class="grid" id="posts"><p>Загружаю…</p></div>
+  <h2>Вопрос–ответ с форума Циан</h2>
+  <div class="perk"><b>«Насколько реалистичны мои ожидания?»</b> — продажа на Фрунзенской наб., 115 м.<br />Мой ответ: продавайте, когда это действительно необходимо; сформулируйте задачу; вспомните триггер первой мысли о продаже. Цена за метр ничего не решает — решают цель и профессионализм. Без опыта многомиллионных сделок — оплатите развёрнутую консультацию, в рекламу заложите 1–2% цены. <a href="https://www.cian.ru/agents/12252057/">Все советы на Циан</a></div>
+  <p><a class="btn" href="tel:+79165841440">Задать вопрос: +7 916 584-14-40</a> <a class="btn ghost" href="https://www.cian.ru/agents/12252057/">Профиль Циан</a> <a class="btn ghost" href="https://agencies.domclick.ru/agent/30328">Профиль Домклик</a></p>
+</main>
+<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · <a href="index.html">на главную</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+<script type="module">
+  import "./assets/js/common.js";
+  fetch("data/posts.json").then(r => r.json()).then(posts => {
+    document.getElementById("posts").innerHTML = posts.map(p =>
+      `<article class="card"><div class="card-body"><h3 class="card-title">${p.title}</h3><div class="card-meta">${p.date} · ${p.tag}</div><p>${p.excerpt}</p></div></article>`
+    ).join("");
+  });
+</script>
+</body>
+</html>

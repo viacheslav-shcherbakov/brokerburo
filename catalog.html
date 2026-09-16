@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Каталог — Бюро Вячеслава Щербакова</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html" class="active">Каталог</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="blog.html">Блог</a>
+      <a href="coaching.html">Обучение</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Каталог</h1>
+  <form class="filters" id="filters">
+    <label>Тип
+      <select name="type">
+        <option value="">Все</option>
+        <option value="apartment">Квартира</option>
+        <option value="house">Дом</option>
+        <option value="commercial">Коммерция</option>
+      </select>
+    </label>
+    <label>Комнаты
+      <select name="rooms">
+        <option value="">Любые</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4+</option>
+      </select>
+    </label>
+    <label>Район
+      <select name="district"><option value="">Все</option></select>
+    </label>
+    <label>Цена до, ₽
+      <select name="maxPrice">
+        <option value="">Любая</option>
+        <option value="8000000">до 8 млн</option>
+        <option value="15000000">до 15 млн</option>
+        <option value="20000000">до 20 млн</option>
+        <option value="30000000">до 30 млн</option>
+      </select>
+    </label>
+    <label>Статус
+      <select name="status">
+        <option value="">Все</option>
+        <option value="active">В продаже</option>
+        <option value="sold">Продано</option>
+        <option value="rented">Сдано</option>
+      </select>
+    </label>
+    <label>Поиск
+      <input name="q" type="search" placeholder="улица, район, название" />
+    </label>
+  </form>
+  <p id="count" style="color:var(--muted)"></p>
+  <div class="grid" id="grid"><p>Загружаю…</p></div>
+</main>
+
+<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · Москва и МО · <a href="index.html">главная</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+
+<script type="module">
+  import { formatPrice, TYPE_LABEL, STATUS_LABEL } from "./assets/js/common.js";
+
+  const form = document.getElementById("filters");
+  const grid = document.getElementById("grid");
+  const count = document.getElementById("count");
+  let all = [];
+
+  function apply() {
+    const fd = new FormData(form);
+    const type = fd.get("type"), rooms = fd.get("rooms"),
+          district = fd.get("district"), maxPrice = fd.get("maxPrice"),
+          status = fd.get("status"),
+          q = (fd.get("q") || "").toString().trim().toLowerCase();
+    let list = [...all];
+    if (type) list = list.filter(x => x.type === type);
+    if (status) list = list.filter(x => x.status === status);
+    if (rooms) list = list.filter(x => x.rooms != null && (rooms === "4" ? x.rooms >= 4 : x.rooms === Number(rooms)));
+    if (district) list = list.filter(x => x.district === district);
+    if (maxPrice) list = list.filter(x => x.price != null && x.price <= Number(maxPrice));
+    if (q) list = list.filter(x => (x.title + " " + x.address + " " + x.district).toLowerCase().includes(q));
+    count.textContent = `Найдено: ${list.length}`;
+    grid.innerHTML = list.length ? list.map(card).join("") : "<p>Ничего не нашлось. Попробуй смягчить фильтры.</p>";
+  }
+
+  function card(l) {
+    const badge = `<span class="badge ${l.status}">${STATUS_LABEL[l.status] || l.status}</span>`;
+    const price = l.price != null ? `<div class="card-price">${formatPrice(l.price)}</div>` : "";
+    const promo = l.promo_url ? `<a class="btn ghost" href="${l.promo_url}">Промо-сайт</a>` : "";
+    return `<article class="card">
+      <img src="${l.image}" alt="${l.title}" loading="lazy" onerror="this.style.display='none'" />
+      <div class="card-body">
+        <div>${badge}</div>
+        <h3 class="card-title">${l.title}</h3>
+        <div class="card-meta">${TYPE_LABEL[l.type]} · ${l.params || l.district}</div>
+        ${price}
+        <div class="card-actions">
+          <a class="btn" href="object.html?id=${l.id}">Открыть</a>
+          ${promo}
+        </div>
+      </div>
+    </article>`;
+  }
+
+  fetch("data/listings.json").then(r => r.json()).then(data => {
+    all = data;
+    const districts = [...new Set(all.map(x => x.district))].sort();
+    const sel = form.querySelector('[name="district"]');
+    districts.forEach(d => { const o = document.createElement("option"); o.value = d; o.textContent = d; sel.appendChild(o); });
+    form.addEventListener("input", apply);
+    form.addEventListener("submit", e => e.preventDefault());
+    apply();
+  }).catch(() => { grid.innerHTML = "<p>Не смог загрузить. Запусти локальный сервер: <code>npx serve app</code></p>"; });
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Объект — Бюро Вячеслава Щербакова</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="blog.html">Блог</a>
+      <a href="coaching.html">Обучение</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <p><a href="catalog.html">← Назад в каталог</a></p>
+  <div class="detail" id="detail"><p>Загружаю…</p></div>
+</main>
+
+<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · Москва и МО · <a href="index.html">главная</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+
+<script type="module">
+  import { formatPrice, TYPE_LABEL, STATUS_LABEL } from "./assets/js/common.js";
+
+  const id = new URLSearchParams(location.search).get("id");
+  const box = document.getElementById("detail");
+
+  fetch("data/listings.json").then(r => r.json()).then(all => {
+    const l = all.find(x => x.id === id) || all[0];
+    document.title = l.title + " — Бюро Вячеслава Щербакова";
+    const badge = `<span class="badge ${l.status}">${STATUS_LABEL[l.status] || ""}</span>`;
+    const price = l.price != null ? `<p style="font-size:28px;font-weight:800">${formatPrice(l.price)}</p>` : "";
+    const cian = l.cian_url ? `<a class="btn ghost" href="${l.cian_url}">Смотреть на Циан</a>` : "";
+    const promo = l.promo_url ? `<a class="btn accent" href="${l.promo_url}">Промо-сайт объекта</a>` : "";
+    const extra = [l.metro ? "м. " + l.metro : "", l.year ? l.year + " г." : "", l.price_per_m2 ? new Intl.NumberFormat("ru-RU").format(l.price_per_m2) + " ₽/м²" : ""].filter(Boolean).join(" · ");
+    box.innerHTML = `
+      <div><img src="${l.image}" alt="${l.title}" onerror="this.style.display='none'" /></div>
+      <div>
+        <p>${badge}</p>
+        <h1 style="margin-top:0">${l.title}</h1>
+        <p style="color:var(--muted)">${TYPE_LABEL[l.type]} · ${l.params || l.district}${extra ? "<br />" + extra : ""}</p>
+        ${price}
+        <p>${l.description}</p>
+        <p style="display:flex;gap:8px;flex-wrap:wrap">${cian}${promo}</p>
+        <form class="lead-form" id="lead" novalidate>
+          <b>Оставить заявку</b>
+          <input name="name" placeholder="Имя" autocomplete="name" />
+          <input name="phone" placeholder="+7 ___ ___-__-__" inputmode="tel" autocomplete="tel" />
+          <span class="form-err" id="err"></span>
+          <button class="btn accent" type="submit">Позвоните мне</button>
+          <span class="form-ok" id="ok"></span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn ghost" href="tel:+79165841440">Позвонить</a>
+            <a class="btn ghost" href="https://wa.me/79165841440?text=${encodeURIComponent("Интересует " + l.title)}">WhatsApp</a>
+            <a class="btn ghost" href="https://t.me/VAShcherbakov">Telegram</a>
+            <a class="btn ghost" href="https://vk.ru/brokerburo">ВК</a>
+          </div>
+        </form>
+      </div>`;
+    document.getElementById("lead").addEventListener("submit", e => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const name = fd.get("name").toString().trim();
+      const phone = fd.get("phone").toString().trim();
+      const err = document.getElementById("err"), ok = document.getElementById("ok");
+      err.textContent = ""; ok.textContent = "";
+      if (name.length < 2) { err.textContent = "Подскажи имя (от 2 букв)."; return; }
+      if (!/^\+?[0-9\s\-()]{10,}$/.test(phone)) { err.textContent = "Проверь телефон — нужно минимум 10 цифр."; return; }
+      ok.textContent = `Спасибо, ${name}! Заявка по «${l.title}» записана. Перезвоню в течение часа.`;
+      e.target.querySelector("button[type=submit]").disabled = true;
+    });
+  }).catch(() => { box.innerHTML = "<p>Не смог загрузить объект.</p>"; });
+</script>
+</body>
+</html>

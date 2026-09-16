@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бюро Вячеслава Щербакова — недвижимость в Москве</title>
+  <meta name="description" content="Вячеслав Щербаков: 15 лет, 1000+ сделок. Продаю на 5–7% дороже, покупаю на 5–10% дешевле. Вторичка, загород, коммерция. Москва и МО." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="index.html" class="active">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="cases.html">Кейсы</a>
+      <a href="blog.html">Блог</a>
+      <a href="coaching.html">Обучение</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <h1>Вячеслав Щербаков — брокер, который защищает ваши деньги</h1>
+      <p>Дипломированный брокер, кандидат юридических наук. 15 лет практики, 1000+ сделок, 10+ лет на Циан, рейтинг 4,5. Продаю на 5–7% дороже рынка, покупаю на 5–10% дешевле. Тщательно выбираю клиентов и объекты.</p>
+      <p>
+        <a class="btn accent" href="catalog.html">Смотреть объект в продаже</a>
+        <a class="btn ghost" href="tel:+79165841440">+7 916 584-14-40</a>
+      </p>
+      <p style="color:var(--muted);font-size:14px">Первый шаг — консультация. Ни к чему не обязывает, но даст цену и стратегию. <a href="https://www.cian.ru/agents/12252057/">Профиль на Циан</a></p>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/portrait.png" alt="Вячеслав Щербаков — брокер по недвижимости" />
+      <div class="perk" style="margin-top:10px">
+        <b>Быстро · Выгодно · Удобно</b><br />
+        Точная оценка по аналогам и истории сделок. Предпродажная упаковка, реклама на 40+ площадках, переговоры без дёргания вас по мелочам.
+      </div>
+    </div>
+  </section>
+
+  <section class="perks">
+    <div class="perk"><b>Проверка до задатка</b><br />Объект, продавцы, перепланировки, долги. Ровные документы для лёгкой ипотеки.</div>
+    <div class="perk"><b>Торг в вашу пользу</b><br />Аргументы по рынку, несколько предложений по цене, безопасные расчёты.</div>
+    <div class="perk"><b>Сделка под ключ</b><br />Документы, аванс, ДКП, Росреестр, акт приёма-передачи. Всегда на связи.</div>
+  </section>
+
+  <h2>Узнайте точную цену вашей квартиры</h2>
+  <form class="lead-form" id="valuation" novalidate>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input name="phone" placeholder="+7 ___ ___-__-__" inputmode="tel" style="flex:1;min-width:200px" />
+      <button class="btn accent" type="submit">Получить расчёт</button>
+    </div>
+    <span class="form-err" id="v-err"></span>
+    <span class="form-ok" id="v-ok"></span>
+  </form>
+
+  <h2>Сейчас в продаже</h2>
+  <div class="grid" id="top-grid"><p>Загружаю…</p></div>
+  <p><a class="btn ghost" href="cases.html">10 кейсов: продажи, аренда, юридика →</a></p>
+
+  <h2>Как проходит сделка — 9 этапов</h2>
+  <section class="perks">
+    <div class="perk"><b>1–3.</b> Встреча, договор, контент: фото, планировка, тексты.</div>
+    <div class="perk"><b>4–6.</b> Реклама, звонки и показы, переговоры и предложения.</div>
+    <div class="perk"><b>7–9.</b> Аванс и подготовка, сделка в Росреестре, передача объекта.</div>
+  </section>
+
+  <h2>Книга в соавторстве с 12 брокерами</h2>
+  <div class="detail" style="grid-template-columns:220px 1fr">
+    <div><img src="assets/img/book-cover.jpg" alt="Обложка книги Молчать не буду! О недвижимости" onerror="this.style.display='none'" /></div>
+    <div>
+      <p><b>«Молчать не буду! О недвижимости»</b>, метод Улицкой. Вячеслав — соавтор: дипломированный брокер, кандидат юридических наук, автор 50+ книг и статей.</p>
+      <p style="color:var(--muted);font-size:14px">Файл обложки положи в <code>app/assets/img/book-cover.jpg</code> (приложенная картинка из ТЗ). ISBN 978-5-6053585-2-7.</p>
+      <p><a class="btn ghost" href="coaching.html">Об обучении и книге</a></p>
+    </div>
+  </div>
+
+  <h2>Отзывы</h2>
+  <section class="perks">
+    <div class="perk"><b>Алексей Е.</b> · Домклик, 5, сделка 11.04.2026<br />«Искали жильё с опаской, понимая риски вторички, но процесс прошёл спокойно. Проведены все проверки объекта и продавцов, подготовлен весь пакет документов, процесс от и до. Ответственный и внимательный к деталям, защищает интересы клиента. Рекомендуем!»</div>
+    <div class="perk"><b>Отзыв с Циан</b> · дом в Новой Москве<br />«Переговоры вёл грамотно, подкован в законах, полный комплект документов, всегда на связи. Сложная сделка прошла быстро и чётко. Сопроводил акт передачи. Рекомендую.»</div>
+    <div class="perk"><b>Отзыв с Циан</b> · подбор и аренда<br />«Помог подобрать и приобрести квартиру с проверкой всех документов и полным сопровождением. Потом помог сдать в день размещения объявления. Профессионализм, пунктуальность, вежливость!»</div>
+  </section>
+
+  <h2>Контакты</h2>
+  <p style="color:var(--muted)">Звони: <a href="tel:+79165841440">+7 916 584-14-40</a> · <a href="mailto:79165841440@ya.ru">79165841440@ya.ru</a> · отвечу в течение часа</p>
+  <p>
+    <a class="btn" href="tel:+79165841440">Позвонить</a>
+    <a class="btn ghost" href="https://wa.me/79165841440">WhatsApp</a>
+    <a class="btn ghost" href="https://t.me/VAShcherbakov">Telegram — личка</a>
+    <a class="btn ghost" href="https://t.me/ai_and_realtor">TG-канал</a>
+    <a class="btn ghost" href="https://vk.ru/brokerburo">ВК-сообщество</a>
+    <a class="btn ghost" href="https://www.cian.ru/agents/12252057/">Я на Циан</a>
+    <a class="btn ghost" href="https://agencies.domclick.ru/agent/30328">Я на Домклик</a>
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">Бюро Вячеслава Щербакова · Москва и МО · <a href="catalog.html">каталог</a> · <a href="cases.html">кейсы</a> · <a href="blog.html">блог</a> · <a href="coaching.html">обучение</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/ai_and_realtor?direct">TG-директ</a></div>
+</footer>
+
+<script type="module">
+  import { formatPrice, TYPE_LABEL, STATUS_LABEL } from "./assets/js/common.js";
+
+  function card(l) {
+    const badge = `<span class="badge ${l.status}">${STATUS_LABEL[l.status] || ""}</span>`;
+    const cian = l.cian_url ? ` <a href="${l.cian_url}">На Циан</a>` : "";
+    const promo = l.promo_url ? ` <a href="${l.promo_url}">Промо-сайт</a>` : "";
+    const price = l.price != null ? `<div class="card-price">${formatPrice(l.price)}</div>` : "";
+    return `<article class="card">
+      <img src="${l.image}" alt="${l.title}" loading="lazy" onerror="this.style.display='none'" />
+      <div class="card-body">
+        <div>${badge}</div>
+        <h3 class="card-title">${l.title}</h3>
+        <div class="card-meta">${TYPE_LABEL[l.type]} · ${l.params || l.district}${cian}${promo}</div>
+        ${price}
+        <div class="card-actions">
+          <a class="btn" href="object.html?id=${l.id}">Открыть</a>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  const grid = document.getElementById("top-grid");
+  fetch("data/listings.json").then(r => r.json()).then(all => {
+    const top = [...all.filter(x => x.status === "active"), ...all.filter(x => x.status !== "active")].slice(0, 6);
+    grid.innerHTML = top.map(card).join("");
+  }).catch(() => { grid.innerHTML = "<p>Не смог загрузить объекты. Открой через локальный сервер: npx serve app.</p>"; });
+
+  document.getElementById("valuation").addEventListener("submit", e => {
+    e.preventDefault();
+    const phone = new FormData(e.target).get("phone").toString().trim();
+    const err = document.getElementById("v-err"), ok = document.getElementById("v-ok");
+    err.textContent = ""; ok.textContent = "";
+    if (!/^\+?[0-9\s\-()]{10,}$/.test(phone)) { err.textContent = "Оставь телефон — минимум 10 цифр, пришлю расчёт."; return; }
+    ok.textContent = "Принято! Пришлю расчёт стоимости и стратегию продажи.";
+    e.target.querySelector("button").disabled = true;
+  });
+</script>
+</body>
+</html>

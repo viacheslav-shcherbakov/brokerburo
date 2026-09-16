@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Кейсы — Бюро Вячеслава Щербакова</title>
+  <meta name="description" content="10 кейсов: продажи, аренда и коммерция, юридическое сопровождение. Адреса, цифры, что сработало." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="index.html">Главная</a><a href="catalog.html">Каталог</a>
+    <a href="cases.html" class="active">Кейсы</a><a href="blog.html">Блог</a>    <a href="coaching.html">Обучение</a>
+  </nav>
+</div></header>
+<main class="container">
+  <h1>Кейсы: продажи, аренда, юрсопровождение</h1>
+  <p style="color:var(--muted)">Имена клиентов скрыты, документы не публикуем.</p>
+  <p>
+    <button class="btn ghost" data-f="all">Все</button>
+    <button class="btn ghost" data-f="sale">Продажи</button>
+    <button class="btn ghost" data-f="rent">Аренда/коммерция</button>
+    <button class="btn ghost" data-f="support">Юрсопровождение</button>
+  </p>
+  <div class="grid" id="cases"><p>Загружаю…</p></div>
+  <h2>Твой случай — особенный?</h2>
+  <p><a class="btn accent" href="tel:+79165841440">Позвонить: +7 916 584-14-40</a>
+  <a class="btn ghost" href="https://www.cian.ru/agents/12252057/">Профиль Циан</a>
+  <a class="btn ghost" href="https://agencies.domclick.ru/agent/30328">Профиль Домклик</a>
+  <a class="btn ghost" href="https://vk.ru/brokerburo">ВК-сообщество</a>
+  <a class="btn ghost" href="https://t.me/ai_and_realtor">TG-канал</a>
+  <a class="btn ghost" href="https://t.me/VAShcherbakov">TG-личка</a></p>
+</main>
+<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · Москва и МО · <a href="index.html">главная</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+<script type="module">
+  import "./assets/js/common.js";
+  let all = [];
+  const box = document.getElementById("cases");
+  function render(f) {
+    const list = f === "all" ? all : all.filter(x => x.type === f);
+    box.innerHTML = list.map(c => `<article class="card">
+      ${c.image ? `<img src="${c.image}" alt="${c.title}" loading="lazy" />` : `<div style="padding:14px;color:var(--muted);font-size:13px"></div>`}
+      <div class="card-body">
+        <div class="card-meta">${c.type_label} · ${c.address}</div>
+        <h3 class="card-title">${c.title}</h3>
+        <div class="card-meta">${c.params}</div>
+        <div class="card-price">${c.price}</div>
+        <div class="card-meta">Рынок: ${c.market} · Сроки: ${c.timeline}</div>
+        <p><b>Что сработало:</b> ${c.what_worked}</p>
+        <div class="card-meta">Пакет: ${c.package.join(" · ")}</div>
+        ${c.cian_url ? `<div class="card-actions"><a class="btn" href="${c.cian_url}">Смотреть на Циан</a></div>` : ""}
+      </div>
+    </article>`).join("");
+  }
+  document.querySelectorAll("[data-f]").forEach(b => b.addEventListener("click", () => render(b.dataset.f)));
+  fetch("data/cases.json").then(r => r.json()).then(d => { all = d; render("all"); });
+</script>
+</body>
+</html>
