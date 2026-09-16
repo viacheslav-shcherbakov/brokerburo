@@ -90,17 +90,28 @@
   
   function render(f) {
     const list = f === "all" ? all : all.filter(x => x.type === f);
-    box.innerHTML = list.map(c => `<article class="case-card hover-lift">
-      ${c.image ? `<img src="${c.image}" alt="${c.title}" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:4px;" />` : `<div style="padding:14px;color:var(--text-muted);font-size:13px;background:var(--bg-paper);border-radius:4px;"></div>`}
-      <div style="padding:24px 0;">
-        <span class="object-badge" style="margin-bottom:12px;">${c.type_label}</span>
-        <h3 style="font-family:var(--font-serif);font-size:20px;margin-bottom:8px;">${c.title}</h3>
-        <p style="color:var(--text-muted);font-size:14px;margin-bottom:12px;">${c.address} · ${c.params}</p>
-        <p style="font-weight:600;margin-bottom:8px;">${c.price}</p>
-        <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Рынок: ${c.market} · Сроки: ${c.timeline}</p>
-        <p style="margin-bottom:16px;"><strong>Что сработало:</strong> ${c.what_worked}</p>
-        <p style="font-size:12px;color:var(--text-muted);margin-bottom:20px;">Пакет: ${c.package.join(" · ")}</p>
-        ${c.cian_url ? `<a class="btn btn-primary" href="${c.cian_url}" style="width:100%;text-align:center;">Смотреть на Циан</a>` : ""}
+    box.innerHTML = list.map((c, index) => `<article class="case-card hover-lift">
+      ${c.image 
+        ? `<div class="case-image-wrapper"><img src="${c.image}" alt="${c.title}" loading="lazy" /><span class="case-badge">${c.type_label}</span></div>` 
+        : `<div class="case-image-wrapper"><div class="case-image-placeholder">${c.type_label} · Кейс #${index + 1}</div></div>`
+      }
+      <div class="case-content">
+        <span class="case-number">0${index + 1}</span>
+        <h3>${c.title}</h3>
+        <div class="case-meta">${c.address} · ${c.params}</div>
+        <div class="case-insight">
+          <span class="case-insight-label">Что сработало</span>
+          <p class="case-insight-text">${c.what_worked}</p>
+        </div>
+        <div class="case-package">
+          ${c.package.map(p => `<span class="package-tag">${p}</span>`).join("")}
+        </div>
+        <div class="case-cta">
+          ${c.cian_url 
+            ? `<a class="btn btn-primary" href="${c.cian_url}">Смотреть на Циан →</a>` 
+            : `<a class="btn btn-outline" href="tel:+79165841440">Обсудить задачу →</a>`
+          }
+        </div>
       </div>
     </article>`).join("");
   }
