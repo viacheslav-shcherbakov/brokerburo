@@ -272,7 +272,85 @@
     </div>
   </div>
 </footer>
+<script>
+// Header scroll effect
+(() => {
+  const header = document.getElementById('header');
+  if (!header) return;
+  
+  const onScroll = () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 
+// Mobile menu
+(() => {
+  const burger = document.querySelector('.burger');
+  const mobile = document.querySelector('.mobile-nav');
+  const header = document.querySelector('.site-header');
+  
+  if (!burger || !mobile) return;
+  
+  burger.addEventListener('click', () => {
+    const open = mobile.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.textContent = open ? '✕' : '☰';
+    mobile.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  
+  mobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobile.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+      mobile.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+// Fade-in animation on scroll
+(() => {
+  const elements = document.querySelectorAll('.fade-in');
+  if (!elements.length) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  elements.forEach(el => observer.observe(el));
+})();
+
+// Image reveal animation
+(() => {
+  const images = document.querySelectorAll('.image-reveal img');
+  images.forEach(img => {
+    if (img.complete) {
+      img.parentElement.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => {
+        img.parentElement.classList.add('loaded');
+      });
+    }
+  });
+})();
+</script>
 <script type="module">
   import "./assets/js/common.js";
   document.getElementById("coach").addEventListener("submit", e => {
