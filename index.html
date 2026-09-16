@@ -216,6 +216,9 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="object.html?id=peredelkino-1k-pasternaka9">Смотреть объект →</a>
           </div>
+          <p class="object-price">15 000 000 ₽</p>
+          <p class="object-bureau-note">Объект представлен BrokerBuro</p>
+          <a class="btn btn-primary" href="object.html?id=peredelkino-1k-pasternaka9">Смотреть объект →</a>
         </div>
       </article>
     </div>
@@ -493,6 +496,8 @@
 (() => {
   const burger = document.querySelector('.burger');
   const mobile = document.querySelector('.mobile-nav');
+  const header = document.querySelector('.site-header');
+  
   if (!burger || !mobile) return;
   
   burger.addEventListener('click', () => {
