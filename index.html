@@ -3,65 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Бюро Вячеслава Щербакова — недвижимость в Москве</title>
-  <meta name="description" content="Персональное брокерское бюро Вячеслава Щербакова. Продажа, покупка и сопровождение недвижимости в Москве. Брокер, кандидат юридических наук, 15 лет практики." />
-  <meta property="og:title" content="Бюро Вячеслава Щербакова" />
-  <meta property="og:description" content="Недвижимость в Москве, где важны деньги и детали." />
+  <title>BrokerBuro — Персональное брокерское бюро Вячеслава Щербакова</title>
+  <meta name="description" content="Персональное брокерское бюро для покупки, продажи и сопровождения сложных сделок с недвижимостью в Москве. Брокер, кандидат юридических наук, 15 лет практики." />
+  <meta property="og:title" content="BrokerBuro — Недвижимость, в которой всё имеет значение" />
+  <meta property="og:description" content="Персональное брокерское бюро Вячеслава Щербакова. Недвижимость — сложная. Работа с ней не должна быть сложной." />
   <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="assets/css/style-premium.css" />
 </head>
 <body>
-<header class="site-header">
+
+<!-- Header -->
+<header class="site-header" id="header">
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="BrokerBuro">
-      <span class="brand-name">BROKERBURO</span>
-      <span class="brand-signature">Вячеслав Щербаков · брокер</span>
+      <span class="brand-name">BrokerBuro</span>
+      <span class="brand-signature">Вячеслав Щербаков</span>
     </a>
+    
     <nav class="nav" aria-label="Основная навигация">
-      <a href="#services">Услуги</a>
+      <a href="#objects">Объекты</a>
       <a href="#cases">Кейсы</a>
-      <a href="catalog.html">Объекты</a>
-      <a href="blog.html">Заметки</a>
+      <a href="#services">Услуги</a>
       <a href="#about">О бюро</a>
+      <a href="blog.html">Заметки</a>
     </nav>
-    <a class="header-cta" href="tel:+79165841440">Обсудить задачу →</a>
+    
+    <a class="header-cta" href="tel:+79165841440">Обсудить задачу</a>
+    
     <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
   </div>
+  
   <div class="mobile-nav" aria-hidden="true">
-    <a href="#services">Услуги</a>
+    <a href="#objects">Объекты</a>
     <a href="#cases">Кейсы</a>
-    <a href="catalog.html">Объекты</a>
-    <a href="blog.html">Заметки</a>
+    <a href="#services">Услуги</a>
     <a href="#about">О бюро</a>
+    <a href="blog.html">Заметки</a>
     <a href="tel:+79165841440">Обсудить задачу</a>
   </div>
 </header>
 
 <main>
+  <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
         <span class="hero-eyebrow">МОСКВА · PRIVATE REAL ESTATE</span>
-        <h1 class="hero-title">Недвижимость, <span class="serif">в которой всё</span> имеет значение.</h1>
-        <p class="hero-subtitle">Персональное брокерское бюро для покупки, продажи и сопровождения сложных сделок с недвижимостью.</p>
+        <h1 class="hero-title">
+          Недвижимость,<br>
+          <span class="serif">в которой всё</span><br>
+          имеет значение.
+        </h1>
+        <p class="hero-subtitle">
+          Персональное брокерское бюро для покупки, продажи и сопровождения 
+          сложных сделок с недвижимостью.
+        </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="tel:+79165841440">Обсудить задачу →</a>
-          <a class="btn btn-outline" href="catalog.html">Смотреть объекты</a>
+          <a class="btn btn-link" href="#objects">
+            Смотреть объекты <span class="arrow">→</span>
+          </a>
         </div>
         <div class="hero-meta">
-          <span>Брокер</span><span class="dot"></span><span>к.ю.н.</span><span class="dot"></span><span>15 лет практики</span>
+          <span>Брокер</span>
+          <span class="dot"></span>
+          <span>к.ю.н.</span>
+          <span class="dot"></span>
+          <span>15 лет практики</span>
         </div>
       </div>
+      
       <div class="hero-visual">
         <div class="portrait-wrapper">
-          <img src="assets/portrait.png" alt="Вячеслав Щербаков, брокер по недвижимости" />
+          <img src="assets/portrait.png" alt="Вячеслав Щербаков, брокер по недвижимости" loading="eager" />
           <div class="portrait-signature">
             <div>
               <span class="signature-name">Вячеслав Щербаков</span>
-              <span class="signature-role">брокер · к.ю.н.</span>
+              <span class="signature-role">Брокер · к.ю.н.</span>
             </div>
           </div>
         </div>
@@ -69,85 +93,128 @@
     </div>
   </section>
 
-  <section class="philosophy" id="about">
-    <div class="container">
-      <span class="section-kicker">ЧТО ДЕЙСТВИТЕЛЬНО ВАЖНО</span>
-      <div class="philosophy-grid">
-        <div class="philosophy-item">
-          <span class="philosophy-number">01</span>
-          <h3 class="philosophy-title">Понимать</h3>
-          <p class="philosophy-text">Что происходит со сделкой на каждом этапе.</p>
-        </div>
-        <div class="philosophy-item">
-          <span class="philosophy-number">02</span>
-          <h3 class="philosophy-title">Проверять</h3>
-          <p class="philosophy-text">Не доверять словам, а проверять документы и факты.</p>
-        </div>
-        <div class="philosophy-item">
-          <span class="philosophy-number">03</span>
-          <h3 class="philosophy-title">Решать</h3>
-          <p class="philosophy-text">Когда появляется проблема — не передавать её дальше, а решать.</p>
-        </div>
-      </div>
+  <!-- Philosophy Section -->
+  <section class="philosophy">
+    <div class="container philosophy-grid">
+      <article class="philosophy-item fade-in">
+        <span class="philosophy-number">01</span>
+        <h3 class="philosophy-title">Понимать</h3>
+        <p class="philosophy-text">
+          Что происходит со сделкой на каждом этапе. Никакого тумана — только ясная картина процесса.
+        </p>
+      </article>
+      
+      <article class="philosophy-item fade-in">
+        <span class="philosophy-number">02</span>
+        <h3 class="philosophy-title">Проверять</h3>
+        <p class="philosophy-text">
+          Не доверять словам, а проверять документы и факты. Юридическая экспертиза на каждой стадии.
+        </p>
+      </article>
+      
+      <article class="philosophy-item fade-in">
+        <span class="philosophy-number">03</span>
+        <h3 class="philosophy-title">Решать</h3>
+        <p class="philosophy-text">
+          Когда появляется проблема — не передавать её дальше, а решать. Личная ответственность за результат.
+        </p>
+      </article>
     </div>
   </section>
 
-  <section class="services section" id="services">
+  <!-- Services Section - JTBD Approach -->
+  <section class="services" id="services">
     <div class="container">
       <div class="section-header">
         <div>
-          <span class="section-kicker">УСЛУГИ</span>
+          <span class="section-kicker">ЧТО ВАМ НУЖНО</span>
           <h2>Что вам сейчас нужно?</h2>
         </div>
-        <p>От понятной продажи квартиры до сделки, в которой приходится разбираться в документах, истории объекта и интересах нескольких сторон.</p>
+        <p>
+          От понятной продажи квартиры до сделки, в которой приходится разбираться 
+          в документах, истории объекта и интересах нескольких сторон.
+        </p>
       </div>
+      
       <div class="service-jtbd-grid">
-        <a class="service-jtbd" href="tel:+79165841440">
+        <a class="service-jtbd hover-lift fade-in" href="tel:+79165841440">
           <span class="service-jtbd-number">01</span>
           <h3 class="service-jtbd-title">Хочу продать квартиру</h3>
-          <p class="service-jtbd-desc">Выстроить стратегию, подготовить объект, выйти на рынок и провести сделку.</p>
+          <p class="service-jtbd-desc">
+            Выстроить стратегию, подготовить объект, выйти на рынок и провести сделку.
+          </p>
         </a>
-        <a class="service-jtbd" href="tel:+79165841440">
+        
+        <a class="service-jtbd hover-lift fade-in" href="tel:+79165841440">
           <span class="service-jtbd-number">02</span>
           <h3 class="service-jtbd-title">Хочу купить</h3>
-          <p class="service-jtbd-desc">Найти подходящий объект и проверить его до того, как вы примете решение.</p>
+          <p class="service-jtbd-desc">
+            Найти подходящий объект и проверить его до того, как вы примете решение.
+          </p>
         </a>
-        <a class="service-jtbd" href="tel:+79165841440">
+        
+        <a class="service-jtbd hover-lift fade-in" href="tel:+79165841440">
           <span class="service-jtbd-number">03</span>
           <h3 class="service-jtbd-title">Есть сложная ситуация</h3>
-          <p class="service-jtbd-desc">Разобраться в документах, истории объекта и возможных рисках.</p>
+          <p class="service-jtbd-desc">
+            Разобраться в документах, истории объекта и возможных рисках.
+          </p>
         </a>
-        <a class="service-jtbd" href="tel:+79165841440">
+        
+        <a class="service-jtbd hover-lift fade-in" href="tel:+79165841440">
           <span class="service-jtbd-number">04</span>
           <h3 class="service-jtbd-title">Нужен второй взгляд</h3>
-          <p class="service-jtbd-desc">Независимое мнение перед важным решением.</p>
+          <p class="service-jtbd-desc">
+            Независимое мнение перед важным решением. Экспертная оценка ситуации.
+          </p>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="featured-object section">
+  <!-- Featured Object -->
+  <section class="featured-object" id="objects">
     <div class="container">
       <div class="section-header compact">
         <div>
           <span class="section-kicker">СЕЙЧАС В РАБОТЕ</span>
           <h2>Объект, который можно просто открыть и посмотреть</h2>
         </div>
-        <a class="btn btn-link" href="catalog.html">Все объекты <span class="arrow">→</span></a>
+        <a class="btn btn-link" href="catalog.html">
+          Все объекты <span class="arrow">→</span>
+        </a>
       </div>
-      <article class="object-showcase">
+      
+      <article class="object-showcase fade-in">
         <a class="object-image-wrapper" href="object.html?id=peredelkino-1k-pasternaka9">
           <img src="https://images.cdn-cian.ru/images/kvartira-vnukovskoe-borisa-pasternaka-ulica-2958803488-1.jpg" alt="Квартира на улице Бориса Пастернака, 9" loading="lazy" />
           <span class="object-badge">В продаже</span>
         </a>
         <div class="object-details-wrapper">
-          <p class="object-location">Переделкино Ближнее · Внуковское</p>
+          <span class="object-location">Переделкино Ближнее · Внуковское</span>
           <h3 class="object-title">Бориса Пастернака, 9</h3>
           <p class="object-subtitle">Квартира, в которую можно просто переехать.</p>
+          
           <div class="object-specs">
-            <div class="spec-item"><strong>37,6 м²</strong>площадь</div>
-            <div class="spec-item"><strong>5 / 17</strong>этаж</div>
-            <div class="spec-item"><strong>1-комн.</strong>квартира</div>
+            <div class="spec-item">
+              <strong>37,6 м²</strong>
+              <span>Площадь</span>
+            </div>
+            <div class="spec-item">
+              <strong>1-комнатная</strong>
+              <span>Тип</span>
+            </div>
+            <div class="spec-item">
+              <strong>5 / 17</strong>
+              <span>Этаж</span>
+            </div>
+          </div>
+          
+          <p class="object-price">15 000 000 ₽</p>
+          <p class="object-bureau-note">Объект представлен BrokerBuro</p>
+          
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="object.html?id=peredelkino-1k-pasternaka9">Смотреть объект →</a>
           </div>
           <p class="object-price">15 000 000 ₽</p>
           <p class="object-bureau-note">Объект представлен BrokerBuro</p>
@@ -157,183 +224,275 @@
     </div>
   </section>
 
-  <section class="cases section" id="cases">
+  <!-- Cases Section -->
+  <section class="cases" id="cases">
     <div class="container">
       <div class="section-header compact">
         <div>
           <span class="section-kicker">ДОКАЗАТЕЛЬСТВА</span>
           <h2>Сделки редко бывают простыми.</h2>
         </div>
-        <a class="btn btn-link" href="cases.html">Все кейсы <span class="arrow">→</span></a>
+        <a class="btn btn-link" href="cases.html">
+          Все кейсы <span class="arrow">→</span>
+        </a>
       </div>
+      
       <div class="case-grid">
-        <article class="case-card">
+        <article class="case-card fade-in">
           <span class="case-number">01</span>
           <p class="case-type">Продажа · Переделкино Ближнее</p>
           <h3>Упаковка квартиры как продукта «заезжай и живи»</h3>
-          <p>Професссиональная съёмка, точное описание, акцент на свободной продаже и готовности квартиры к жизни без дополнительных вложений.</p>
+          <p>
+            Профессиональная съёмка, точное описание, акцент на свободной продаже 
+            и готовности квартиры к жизни без дополнительных вложений.
+          </p>
           <a class="case-link" href="cases.html">Разобрать кейс <span class="arrow">→</span></a>
         </article>
-        <article class="case-card">
+        
+        <article class="case-card fade-in">
           <span class="case-number">02</span>
           <p class="case-type">Покупка · юридическая проверка</p>
           <h3>История переходов прав до сделки</h3>
-          <p>ЕГРН, история объекта и адресные справки — чтобы решение о покупке принималось после проверки, а не вместо неё.</p>
+          <p>
+            ЕГРН, история объекта и адресные справки — чтобы решение о покупке 
+            принималось после проверки, а не вместо неё.
+          </p>
           <a class="case-link" href="cases.html">Разобрать кейс <span class="arrow">→</span></a>
         </article>
-        <article class="case-card">
+        
+        <article class="case-card fade-in">
           <span class="case-number">03</span>
           <p class="case-type">Продажа · наследство</p>
           <h3>Разорванная документальная цепочка</h3>
-          <p>Архив, завещание, соцнайм, ЕЖД — собрали историю и сделали объект продаваемым.</p>
+          <p>
+            Архив, завещание, соцнайм, ЕЖД — собрали историю и сделали объект продаваемым.
+          </p>
           <a class="case-link" href="cases.html">Разобрать кейс <span class="arrow">→</span></a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="process section">
+  <!-- Process Section -->
+  <section class="process">
     <div class="container process-grid">
       <div>
         <span class="section-kicker">ПОДХОД</span>
         <h2>Как я работаю</h2>
-        <p class="process-intro">Клиент понимает, что происходит, зачем это делается и на каком мы сейчас этапе.</p>
+        <p class="process-intro">
+          Пять этапов от первой консультации до момента, когда вопрос действительно решён.
+        </p>
       </div>
-      <ul class="process-timeline">
-        <li class="process-step">
+      
+      <ol class="process-timeline">
+        <li class="process-step fade-in">
           <span class="process-step-number">01</span>
-          <h3 class="process-step-title">Разбираемся</h3>
+          <h4 class="process-step-title">Разбираемся</h4>
           <p class="process-step-desc">Что происходит и чего вы хотите.</p>
         </li>
-        <li class="process-step">
+        <li class="process-step fade-in">
           <span class="process-step-number">02</span>
-          <h3 class="process-step-title">Проверяем</h3>
+          <h4 class="process-step-title">Проверяем</h4>
           <p class="process-step-desc">Документы, объект, историю, ограничения.</p>
         </li>
-        <li class="process-step">
+        <li class="process-step fade-in">
           <span class="process-step-number">03</span>
-          <h3 class="process-step-title">Формируем стратегию</h3>
+          <h4 class="process-step-title">Формируем стратегию</h4>
           <p class="process-step-desc">Цена, переговоры, сроки, сценарий сделки.</p>
         </li>
-        <li class="process-step">
+        <li class="process-step fade-in">
           <span class="process-step-number">04</span>
-          <h3 class="process-step-title">Проводим</h3>
+          <h4 class="process-step-title">Проводим</h4>
           <p class="process-step-desc">Показы, переговоры, документы, расчёты.</p>
         </li>
-        <li class="process-step">
+        <li class="process-step fade-in">
           <span class="process-step-number">05</span>
-          <h3 class="process-step-title">Закрываем</h3>
+          <h4 class="process-step-title">Закрываем</h4>
           <p class="process-step-desc">До момента, когда вопрос действительно решён.</p>
         </li>
-      </ul>
+      </ol>
     </div>
   </section>
 
-  <section class="notes section">
+  <!-- Expertise Section -->
+  <section class="expertise" id="about">
+    <div class="container expertise-grid">
+      <div class="fade-in">
+        <span class="section-kicker">ЭКСПЕРТИЗА</span>
+        <h2 class="expertise-title">
+          Брокер, который понимает не только рынок, но и документы.
+        </h2>
+        <div class="expertise-name">Вячеслав Щербаков</div>
+        <p class="expertise-credentials">
+          Брокер · Кандидат юридических наук · Доцент · Эксперт по недвижимости
+        </p>
+        <p class="text-muted">
+          15 лет практики в недвижимости. Более 1000 проведённых сделок. 
+          Публичный эксперт и автор книг о недвижимости.
+        </p>
+        
+        <div class="media-logos">
+          <span class="media-logo">РИА Новости</span>
+          <span class="media-logo">Коммерсантъ</span>
+          <span class="media-logo">Ведомости</span>
+          <span class="media-logo">РБК</span>
+          <span class="media-logo">ЦИАН</span>
+        </div>
+      </div>
+      
+      <div class="fade-in">
+        <!-- Placeholder for additional expertise content or image -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section class="book-section">
+    <div class="container book-grid">
+      <div class="book-cover-wrapper fade-in">
+        <img class="book-cover" src="assets/img/book-cover-web.jpg" alt="Книга «Молчать не буду!   О недвижимости»" loading="lazy" />
+      </div>
+      <div class="book-content fade-in">
+        <span class="section-kicker">КНИГА</span>
+        <h2>Молчать не буду!</h2>
+        <h2>О недвижимости</h2>
+        <blockquote class="book-quote">
+          О людях, квартирах и странностях профессии. Книга о том, как устроен 
+          рынок недвижимости изнутри — без приукрашивания и рекламного шума.
+        </blockquote>
+        <a class="btn btn-outline" href="https://www.avito.ru/moskva/knigi_i_zhurnaly/unikalnaya_kniga_o_nedvizhimosti_7458158001">Купить →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes Section -->
+  <section class="notes">
     <div class="container">
       <div class="section-header compact">
         <div>
           <span class="section-kicker">ЗАМЕТКИ БРОКЕРА</span>
           <h2>О недвижимости — без лишнего шума.</h2>
         </div>
-        <a class="btn btn-link" href="blog.html">Все заметки <span class="arrow">→</span></a>
+        <a class="btn btn-link" href="blog.html">
+          Все заметки <span class="arrow">→</span>
+        </a>
       </div>
+      
       <div class="notes-grid">
-        <article class="note-card">
-          <span class="note-category">Стратегия<span class="note-date">· 01.09.2026</span></span>
+        <article class="note-card fade-in">
+          <div>
+            <span class="note-category">Стратегия</span>
+            <span class="note-date">· 01.09.2026</span>
+          </div>
           <h3>Продавать — когда действительно надо</h3>
-          <p>Сформулируй задачу, а не цену за метр. Иногда выгоднее не продавать.</p>
+          <p>
+            Сформулируй задачу, а не цену за метр. Иногда выгоднее не продавать.
+          </p>
           <a class="note-read-more" href="blog.html">Читать <span class="arrow">→</span></a>
         </article>
-        <article class="note-card">
-          <span class="note-category">Юридика<span class="note-date">· 20.08.2026</span></span>
+        
+        <article class="note-card fade-in">
+          <div>
+            <span class="note-category">Юридика</span>
+            <span class="note-date">· 20.08.2026</span>
+          </div>
           <h3>Вторичка без риска: проверки до задатка</h3>
-          <p>Что проверяю в каждой сделке до того, как клиент принимает решение.</p>
+          <p>
+            Что проверяю в каждой сделке до того, как клиент принимает решение.
+          </p>
           <a class="note-read-more" href="blog.html">Читать <span class="arrow">→</span></a>
         </article>
-        <article class="note-card">
-          <span class="note-category">Продажа<span class="note-date">· 05.08.2026</span></span>
+        
+        <article class="note-card fade-in">
+          <div>
+            <span class="note-category">Продажа</span>
+            <span class="note-date">· 05.08.2026</span>
+          </div>
           <h3>1–2% в рекламу возвращаются ценой</h3>
-          <p>Когда продвижение действительно окупается и когда оно не нужно.</p>
+          <p>
+            Когда продвижение действительно окупается и когда оно не нужно.
+          </p>
           <a class="note-read-more" href="blog.html">Читать <span class="arrow">→</span></a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="book-section">
-    <div class="container book-grid">
-      <div class="book-cover-wrapper">
-        <img class="book-cover" src="assets/img/book-cover-web.jpg" alt="Книга «Диалоги с риэлтором»" loading="lazy" />
-      </div>
-      <div class="book-content">
-        <span class="section-kicker">КНИГА</span>
-        <h2>ДИАЛОГИ С РИЭЛТОРОМ</h2>
-        <p class="book-quote">О людях, квартирах и странностях профессии.</p>
-        <a class="btn btn-primary" href="coaching.html">Читать →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="expertise section">
-    <div class="container expertise-grid">
-      <div>
-        <span class="section-kicker">ЭКСПЕРТИЗА</span>
-        <h2 class="expertise-title">Брокер, который понимает не только рынок, но и документы.</h2>
-      </div>
-      <div>
-        <p class="expertise-name">Вячеслав Щербаков</p>
-        <p class="expertise-credentials">Брокер · Кандидат юридических наук · Доцент · Эксперт по недвижимости</p>
-        <div class="media-logos">
-          <span class="media-logo">ЦИАН</span>
-          <span class="media-logo">ДОМКЛИК</span>
-          <span class="media-logo">ВИНБИТИ</span>
-          <span class="media-logo">ПРАВО.RU</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Есть задача с недвижимостью?</h2>
-      <p class="final-cta-text">Расскажите, что происходит. Я посмотрю на ситуацию и предложу следующий шаг.</p>
-      <a class="btn btn-primary" href="tel:+79165841440">Обсудить задачу →</a>
+      <span class="section-kicker">ЕСТЬ ЗАДАЧА?</span>
+      <h2>
+        Есть задача с недвижимостью?<br>
+        <span class="serif">Расскажите, что происходит.</span>
+      </h2>
+      <p class="final-cta-text">
+        Я посмотрю на ситуацию и предложу следующий шаг. Без обязательств — просто разговор о вашем вопросе.
+      </p>
+      <div class="hero-actions" style="justify-content: center;">
+        <a class="btn btn-primary" href="tel:+79165841440">Обсудить задачу →</a>
+      </div>
       <div class="contact-methods">
+        <a href="tel:+79165841440">+7 916 584-14-40</a>
         <a href="https://t.me/VAShcherbakov">Telegram</a>
         <a href="https://wa.me/79165841440">WhatsApp</a>
-        <a href="tel:+79165841440">+7 916 584-14-40</a>
       </div>
+      <p class="text-muted" style="font-size: 12px; margin-top: 24px;">Москва и МО · отвечу в течение часа</p>
     </div>
   </section>
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <strong>BROKERBURO</strong>
-      <span>Вячеслав Щербаков · брокер · к.ю.н.</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>BrokerBuro</strong>
+        <span>Персональное брокерское бюро<br>Вячеслава Щербакова</span>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#objects">Объекты</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О бюро</a>
+        <a href="blog.html">Заметки</a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="https://www.cian.ru/agents/12252057/" target="_blank" rel="noopener">ЦИАН</a>
+        <a href="https://agencies.domclick.ru/agent/30328" target="_blank" rel="noopener">Домклик</a>
+        <a href="https://vk.ru/brokerburo" target="_blank" rel="noopener">ВК</a>
+        <a href="https://t.me/ai_and_realtor" target="_blank" rel="noopener">TG</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="catalog.html">Объекты</a>
-      <a href="cases.html">Кейсы</a>
-      <a href="blog.html">Заметки</a>
-      <a href="coaching.html">Профессионалам</a>
+    
+    <div class="footer-bottom">
+      <span>© 2005-2026 Вячеслав Щербаков => BrokerBuro. Все права защищены.</span>
+      <span>Недвижимость в Москве</span>
     </div>
-    <div class="footer-links">
-      <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a>
-      <a href="https://agencies.domclick.ru/agent/30328">Домклик</a>
-      <a href="https://vk.ru/brokerburo">ВК</a>
-      <a href="https://t.me/ai_and_realtor">Telegram-канал</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2024 BrokerBuro. Все права защищены.</span>
-    <span>Москва и МО</span>
   </div>
 </footer>
 
 <script>
+// Header scroll effect
+(() => {
+  const header = document.getElementById('header');
+  if (!header) return;
+  
+  const onScroll = () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// Mobile menu
 (() => {
   const burger = document.querySelector('.burger');
   const mobile = document.querySelector('.mobile-nav');
@@ -346,36 +505,54 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.textContent = open ? '✕' : '☰';
     mobile.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
   });
   
-  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobile.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    burger.textContent = '☰';
-    mobile.setAttribute('aria-hidden', 'true');
-  }));
-  
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  mobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobile.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+      mobile.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
   });
+})();
+
+// Fade-in animation on scroll
+(() => {
+  const elements = document.querySelectorAll('.fade-in');
+  if (!elements.length) return;
   
-  // Fade-in animation on scroll
-  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
   
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  elements.forEach(el => observer.observe(el));
+})();
+
+// Image reveal animation
+(() => {
+  const images = document.querySelectorAll('.image-reveal img');
+  images.forEach(img => {
+    if (img.complete) {
+      img.parentElement.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => {
+        img.parentElement.classList.add('loaded');
+      });
+    }
+  });
 })();
 </script>
+
 </body>
 </html>
