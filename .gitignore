@@ -1,51 +1,58 @@
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-*.class
-*.exe
-*.dll
-*.so
-*.a
-*.out
-
-# Dependencies
+```
+# JavaScript/Node.js
 node_modules/
-venv/
-.venv/
-.env
-.env.local
-.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Logs and temp files
-*.log
-*.tmp
+# Distribution and build artifacts
+dist/
+build/
+*.min.js
+*.bundle.js
+
+# IDE and editor files
+.vscode/
+.idea/
 *.swp
 *.swo
 
-# Editors
-.vscode/
-.idea/
+# Environment variables
+.env
+.env.local
+*.env.*
 
-# Coverage
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python (if co-existing)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.env/
+
+# Coverage reports
 coverage/
 htmlcov/
 .coverage
 
-# Build directories
-dist/
-build/
-target/
-.gradle/
-
-# Python specific
+# MyPy cache
 .mypy_cache/
-.pytest_cache/
 
-# System files
-.DS_Store
-Thumbs.db
+# Pytest cache
+.pytest_cache/
 
 # Compressed files
 *.zip
@@ -70,3 +77,4 @@ Thumbs.db
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+```
