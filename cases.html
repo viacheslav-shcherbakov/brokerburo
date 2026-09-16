@@ -11,28 +11,32 @@
   <link rel="stylesheet" href="assets/css/style-premium.css" />
 </head>
 <body>
-<header class="site-header">
+<header class="site-header" id="header">
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="BrokerBuro">
-      <span class="brand-name">BROKERBURO</span>
-      <span class="brand-signature">Вячеслав Щербаков · брокер</span>
+      <span class="brand-name">BrokerBuro</span>
+      <span class="brand-signature">Вячеслав Щербаков</span>
     </a>
-    <nav class="nav">
+    
+    <nav class="nav" aria-label="Основная навигация">
       <a href="index.html">Главная</a>
       <a href="catalog.html">Объекты</a>
       <a href="cases.html" class="active">Кейсы</a>
       <a href="blog.html">Заметки</a>
-      <a href="coaching.html">Профессионалам</a>
+      <a href="coaching.html">Обучение</a>
     </nav>
-    <a class="header-cta js-open-tg" href="#">Обсудить задачу →</a>
-    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    
+    <a class="header-cta js-open-tg" href="#">Обсудить задачу</a>
+    
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
   </div>
+  
   <div class="mobile-nav" aria-hidden="true">
     <a href="index.html">Главная</a>
     <a href="catalog.html">Объекты</a>
     <a href="cases.html">Кейсы</a>
     <a href="blog.html">Заметки</a>
-    <a href="coaching.html">Профессионалам</a>
+    <a href="coaching.html">Обучение</a>
     <a href="#" class="js-open-tg" data-plan="Консультация">Обсудить задачу</a>
   </div>
 </header>
@@ -68,17 +72,39 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <strong>BROKERBURO</strong>
-      <span>Вячеслав Щербаков · брокер · к.ю.н.</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-name">BrokerBuro</span>
+          <span class="brand-signature">Вячеслав Щербаков</span>
+        </a>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 16px; line-height: 1.6;">
+          Персональное брокерское бюро<br />
+          для сложных сделок с недвижимостью
+        </p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h4 style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">Навигация</h4>
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Объекты</a>
+          <a href="cases.html">Кейсы</a>
+          <a href="blog.html">Заметки</a>
+          <a href="coaching.html">Обучение</a>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">Площадки</h4>
+          <a href="https://www.cian.ru/agents/12252057/" target="_blank">ЦИАН</a>
+          <a href="https://agencies.domclick.ru/agent/30328" target="_blank">Домклик</a>
+          <a href="https://vk.ru/brokerburo" target="_blank">ВК</a>
+          <a href="https://t.me/ai_and_realtor" target="_blank">TG-канал</a>
+          <a href="https://t.me/VAShcherbakov" target="_blank">TG-личка</a>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Главная</a>
-      <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a>
-      <a href="https://agencies.domclick.ru/agent/30328">Домклик</a>
-      <a href="https://vk.ru/brokerburo">ВК</a>
-      <a href="https://t.me/ai_and_realtor">Telegram-канал</a>
+    <div style="border-top: 1px solid var(--line-sand); margin-top: 40px; padding-top: 24px; font-size: 12px; color: var(--text-muted);">
+      © 2024 BrokerBuro. Все права защищены.
     </div>
   </div>
 </footer>
