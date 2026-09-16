@@ -1,0 +1,1280 @@
+/* ============================================
+   BROKERBURO — Premium Design System
+   Creative Direction: Editorial Luxury + Private Office
+   ============================================ */
+
+:root {
+  /* Colors — новая палитра */
+  --bg-ivory: #F5F2EC;
+  --bg-paper: #FBFAF7;
+  --text-graphite: #1E1D1A;
+  --text-muted: #777269;
+  --accent-terracotta: #A65338;
+  --line-sand: #D9D3C8;
+  --white: #FFFFFF;
+  
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Layout */
+  --max-width: 1280px;
+  --gutter: 24px;
+  
+  /* Radius — минимальный, как в дизайн-системе */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg-ivory);
+  color: var(--text-graphite);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { 
+  display: block; 
+  max-width: 100%; 
+  height: auto;
+}
+
+a { 
+  color: inherit; 
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+p.lead {
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 580px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.text-accent {
+  color: var(--accent-terracotta);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* ============================================
+   CONTAINER & GRID
+   ============================================ */
+
+.container {
+  width: min(var(--max-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gutter);
+}
+
+/* ============================================
+   HEADER — прозрачный поверх hero
+   ============================================ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: var(--bg-ivory);
+  border-bottom: 1px solid var(--line-sand);
+}
+
+.header-inner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Branding с signature */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-graphite);
+}
+
+.brand-signature {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.nav a {
+  font-size: 13px;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-terracotta);
+  transition: width 0.25s ease;
+}
+
+.nav a:hover {
+  color: var(--text-graphite);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button in Header */
+.header-cta {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: 1px solid var(--text-graphite);
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.header-cta:hover {
+  background: var(--text-graphite);
+  color: var(--white);
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-graphite);
+  margin-left: auto;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--bg-ivory);
+  border-bottom: 1px solid var(--line-sand);
+  padding: 20px 24px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-sand);
+}
+
+/* ============================================
+   HERO SECTION — новый подход
+   ============================================ */
+
+.hero {
+  padding: 140px 0 100px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.95;
+  font-weight: 500;
+  margin-bottom: 28px;
+  max-width: 720px;
+}
+
+.hero-title .serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: clamp(17px, 2vw, 19px);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--text-graphite);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--text-graphite);
+  color: var(--text-graphite);
+}
+
+.btn-outline:hover {
+  background: var(--text-graphite);
+  color: var(--white);
+}
+
+.btn-link {
+  background: transparent;
+  color: var(--text-graphite);
+  padding: 0;
+  min-height: auto;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line-sand);
+  padding-bottom: 4px;
+}
+
+.btn-link:hover {
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+}
+
+.btn-link .arrow {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.btn-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Hero Meta */
+.hero-meta {
+  margin-top: 52px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-meta .dot {
+  width: 4px;
+  height: 4px;
+  background: var(--accent-terracotta);
+  border-radius: 50%;
+}
+
+/* Hero Visual — крупный портрет */
+.hero-visual {
+  position: relative;
+}
+
+.portrait-wrapper {
+  position: relative;
+  background: #E8E4DC;
+  overflow: hidden;
+}
+
+.portrait-wrapper img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s ease;
+}
+
+.portrait-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* Signature overlay на портрете */
+.portrait-signature {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: rgba(30, 29, 26, 0.92);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.signature-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-style: italic;
+}
+
+.signature-role {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* ============================================
+   PHILOSOPHY SECTION — "Что действительно важно"
+   ============================================ */
+
+.philosophy {
+  padding: 120px 0;
+  border-top: 1px solid var(--line-sand);
+  border-bottom: 1px solid var(--line-sand);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.philosophy-item {
+  position: relative;
+  padding-left: 20px;
+}
+
+.philosophy-number {
+  font-size: 11px;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.philosophy-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--text-graphite);
+}
+
+.philosophy-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   SERVICES SECTION — JTBD подход
+   ============================================ */
+
+.services {
+  padding: 120px 0;
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.section-header.compact {
+  grid-template-columns: 1fr auto;
+}
+
+.section-kicker {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+.section-header p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 480px;
+  justify-self: end;
+}
+
+/* Service Cards — JTBD format */
+.service-jtbd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.service-jtbd {
+  background: var(--white);
+  padding: 40px;
+  border: 1px solid var(--line-sand);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-jtbd:hover {
+  border-color: var(--accent-terracotta);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(30, 29, 26, 0.08);
+}
+
+.service-jtbd-number {
+  font-size: 10px;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-jtbd-title {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.service-jtbd-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   FEATURED OBJECT — curated collection
+   ============================================ */
+
+.featured-object {
+  padding: 120px 0;
+  background: var(--bg-paper);
+}
+
+.object-showcase {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  border: 1px solid var(--line-sand);
+  min-height: 680px;
+}
+
+.object-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #E5E0D8;
+}
+
+.object-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.object-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.object-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--accent-terracotta);
+  color: var(--white);
+  padding: 8px 14px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+.object-details-wrapper {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.object-location {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.object-title {
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.object-subtitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.object-specs {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line-sand);
+  border-bottom: 1px solid var(--line-sand);
+  margin-bottom: 32px;
+}
+
+.spec-item {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.spec-item strong {
+  display: block;
+  font-size: 18px;
+  color: var(--text-graphite);
+  margin-bottom: 4px;
+}
+
+.object-price {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.object-bureau-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   CASES SECTION — истории сделок
+   ============================================ */
+
+.cases {
+  padding: 120px 0;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--line-sand);
+}
+
+.case-card {
+  padding: 40px 32px;
+  border-right: 1px solid var(--line-sand);
+  border-bottom: 1px solid var(--line-sand);
+  transition: all 0.3s ease;
+}
+
+.case-card:hover {
+  background: var(--white);
+}
+
+.case-card:last-child {
+  border-right: none;
+}
+
+.case-number {
+  font-size: 10px;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.case-type {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.case-card h3 {
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.case-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.case-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-graphite);
+  border-bottom: 1px solid var(--line-sand);
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.case-link:hover {
+  color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* ============================================
+   PROCESS SECTION — как я работаю
+   ============================================ */
+
+.process {
+  padding: 120px 0;
+  border-top: 1px solid var(--line-sand);
+  border-bottom: 1px solid var(--line-sand);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.process-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 380px;
+}
+
+.process-timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 40px;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line-sand);
+}
+
+.process-step {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--bg-ivory);
+  border: 1px solid var(--accent-terracotta);
+  border-radius: 50%;
+}
+
+.process-step-number {
+  font-size: 10px;
+  color: var(--accent-terracotta);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.process-step-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.process-step-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   EXPERTISE SECTION
+   ============================================ */
+
+.expertise {
+  padding: 120px 0;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.expertise-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.expertise-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.expertise-credentials {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.media-logos {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.media-logo {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* ============================================
+   BOOK SECTION — журнальная вставка
+   ============================================ */
+
+.book-section {
+  padding: 120px 0;
+  background: #EBE6DE;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1100px;
+}
+
+.book-cover-wrapper {
+  position: relative;
+}
+
+.book-cover {
+  box-shadow: 20px 25px 50px rgba(30, 29, 26, 0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.book-cover:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.book-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 64px);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.book-quote {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 32px;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent-terracotta);
+}
+
+/* ============================================
+   NOTES SECTION — заметки брокера
+   ============================================ */
+
+.notes {
+  padding: 120px 0;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--line-sand);
+}
+
+.note-card {
+  padding: 32px 28px 32px 0;
+  border-right: 1px solid var(--line-sand);
+  border-bottom: 1px solid var(--line-sand);
+}
+
+.note-card:last-child {
+  border-right: none;
+}
+
+.note-category {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.note-date {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.note-card h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.note-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.note-read-more {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-graphite);
+  border-bottom: 1px solid var(--line-sand);
+  padding-bottom: 3px;
+}
+
+.note-read-more:hover {
+  color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+
+.final-cta {
+  padding: 140px 0;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.final-cta .serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.final-cta-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.contact-methods a {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border: 1px solid var(--line-sand);
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+.contact-methods a:hover {
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  background: var(--text-graphite);
+  color: var(--white);
+  padding: 60px 0 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-brand strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  display: block;
+  font-size: 11px;
+  color: #8E8981;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: #B9B3AA;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #3A3835;
+  font-size: 10px;
+  color: #6B665F;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .hero-visual {
+    order: -1;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  
+  .philosophy-grid,
+  .case-grid,
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .object-showcase {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .object-image-wrapper {
+    min-height: 450px;
+  }
+  
+  .object-details-wrapper {
+    padding: 48px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(var(--max-width), calc(100% - 32px));
+  }
+  
+  .nav,
+  .header-cta {
+    display: none;
+  }
+  
+  .burger {
+    display: block;
+  }
+  
+  .hero {
+    padding: 120px 0 80px;
+  }
+  
+  .section-header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .section-header p {
+    justify-self: start;
+  }
+  
+  .philosophy-grid,
+  .service-jtbd-grid,
+  .case-grid,
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-grid,
+  .expertise-grid,
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .object-details-wrapper {
+    padding: 32px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .service-jtbd {
+    padding: 28px;
+  }
+  
+  .object-specs {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+/* ============================================
+   MICRO-ANIMATIONS
+   ============================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-reveal {
+  overflow: hidden;
+}
+
+.image-reveal img {
+  transform: scale(1.05);
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.5s ease;
+}
+
+.image-reveal.loaded img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(30, 29, 26, 0.1);
+}
