@@ -34,7 +34,7 @@
       <a href="blog.html">Заметки</a>
     </nav>
     
-    <a class="header-cta" href="tel:+79165841440">Обсудить задачу</a>
+    <a class="header-cta js-open-tg" href="#">Обсудить задачу</a>
     
     <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
   </div>
@@ -45,7 +45,7 @@
     <a href="#services">Услуги</a>
     <a href="#about">О бюро</a>
     <a href="blog.html">Заметки</a>
-    <a href="tel:+79165841440">Обсудить задачу</a>
+    <a href="#" class="js-open-tg" data-plan="Консультация">Обсудить задачу</a>
   </div>
 </header>
 
@@ -65,7 +65,7 @@
           сложных сделок с недвижимостью.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="tel:+79165841440">Обсудить задачу →</a>
+          <a class="btn btn-primary js-open-tg" href="#" data-plan="Консультация">Обсудить задачу →</a>
           <a class="btn btn-link" href="#objects">
             Смотреть объекты <span class="arrow">→</span>
           </a>
@@ -430,7 +430,7 @@
         Я посмотрю на ситуацию и предложу следующий шаг. Без обязательств — просто разговор о вашем вопросе.
       </p>
       <div class="hero-actions" style="justify-content: center;">
-        <a class="btn btn-primary" href="tel:+79165841440">Обсудить задачу →</a>
+        <a class="btn btn-primary js-open-tg" href="#" data-plan="Консультация">Обсудить задачу →</a>
       </div>
       <div class="contact-methods">
         <a href="tel:+79165841440">+7 916 584-14-40</a>
@@ -554,5 +554,35 @@
 })();
 </script>
 
+  <!-- Telegram Modal -->
+  <div id="tgModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Обсудить задачу</h3>
+      <p class="modal-subtitle">Заполните форму — я свяжусь с вами в Telegram</p>
+      
+      <form data-telegram="Консультация">
+        <div class="form-group">
+          <label for="tgName">Ваше имя</label>
+          <input type="text" id="tgName" name="name" placeholder="Иван" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="tgPhone">Телефон</label>
+          <input type="tel" id="tgPhone" name="phone" placeholder="+7 (999) 000-00-00" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">
+          Написать в Telegram
+        </button>
+      </form>
+      
+      <p class="modal-note">
+        Нажимая кнопку, вы перейдёте в Telegram с уже заполненным сообщением
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/js/telegram-form.js"></script>
 </body>
 </html>
