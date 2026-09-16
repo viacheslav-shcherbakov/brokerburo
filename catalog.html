@@ -3,26 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Каталог — Бюро Вячеслава Щербакова</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Объекты — BrokerBuro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-premium.css" />
 </head>
 <body>
 <header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
-    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="BrokerBuro">
+      <span class="brand-name">BROKERBURO</span>
+      <span class="brand-signature">Вячеслав Щербаков · брокер</span>
+    </a>
     <nav class="nav">
       <a href="index.html">Главная</a>
-      <a href="catalog.html" class="active">Каталог</a>
+      <a href="catalog.html" class="active">Объекты</a>
       <a href="cases.html">Кейсы</a>
-      <a href="blog.html">Блог</a>
-      <a href="coaching.html">Обучение</a>
+      <a href="blog.html">Заметки</a>
+      <a href="coaching.html">Профессионалам</a>
     </nav>
+    <a class="header-cta" href="tel:+79165841440">Обсудить задачу →</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-nav" aria-hidden="true">
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Объекты</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="blog.html">Заметки</a>
+    <a href="coaching.html">Профессионалам</a>
+    <a href="tel:+79165841440">Обсудить задачу</a>
   </div>
 </header>
 
-<main class="container">
-  <h1>Каталог</h1>
+<main class="container section">
+  <div class="section-header">
+    <div>
+      <span class="section-kicker">КАТАЛОГ</span>
+      <h2>Объекты в работе</h2>
+    </div>
+    <p>Только проверенные объекты, готовые к сделке.</p>
+  </div>
+  
   <form class="filters" id="filters">
     <label>Тип
       <select name="type">
@@ -65,11 +87,25 @@
       <input name="q" type="search" placeholder="улица, район, название" />
     </label>
   </form>
-  <p id="count" style="color:var(--muted)"></p>
-  <div class="grid" id="grid"><p>Загружаю…</p></div>
+  <p id="count" class="text-muted"></p>
+  <div class="service-jtbd-grid" id="grid"><p>Загружаю…</p></div>
 </main>
 
-<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · Москва и МО · <a href="index.html">главная</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <strong>BROKERBURO</strong>
+      <span>Вячеслав Щербаков · брокер · к.ю.н.</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Главная</a>
+      <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a>
+      <a href="https://agencies.domclick.ru/agent/30328">Домклик</a>
+      <a href="https://vk.ru/brokerburo">ВК</a>
+      <a href="https://t.me/ai_and_realtor">Telegram-канал</a>
+    </div>
+  </div>
+</footer>
 
 <script type="module">
   import { formatPrice, TYPE_LABEL, STATUS_LABEL } from "./assets/js/common.js";
@@ -97,20 +133,20 @@
   }
 
   function card(l) {
-    const badge = `<span class="badge ${l.status}">${STATUS_LABEL[l.status] || l.status}</span>`;
-    const price = l.price != null ? `<div class="card-price">${formatPrice(l.price)}</div>` : "";
-    const promo = l.promo_url ? `<a class="btn ghost" href="${l.promo_url}">Промо-сайт</a>` : "";
-    return `<article class="card">
-      <img src="${l.image}" alt="${l.title}" loading="lazy" onerror="this.style.display='none'" />
-      <div class="card-body">
-        <div>${badge}</div>
-        <h3 class="card-title">${l.title}</h3>
-        <div class="card-meta">${TYPE_LABEL[l.type]} · ${l.params || l.district}</div>
-        ${price}
-        <div class="card-actions">
-          <a class="btn" href="object.html?id=${l.id}">Открыть</a>
-          ${promo}
-        </div>
+    const badge = `<span class="object-badge">${STATUS_LABEL[l.status] || l.status}</span>`;
+    const price = l.price != null ? `<p class="object-price">${formatPrice(l.price)}</p>` : "";
+    const promo = l.promo_url ? `<a class="btn btn-outline" href="${l.promo_url}">Промо-сайт</a>` : "";
+    return `<article class="service-jtbd hover-lift">
+      <div style="position:relative;margin-bottom:16px;">
+        <img src="${l.image}" alt="${l.title}" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:4px;" onerror="this.style.display='none'" />
+        ${badge}
+      </div>
+      <h3 class="service-jtbd-title" style="font-size:18px;margin-bottom:8px;">${l.title}</h3>
+      <p class="service-jtbd-desc">${TYPE_LABEL[l.type]} · ${l.params || l.district}</p>
+      ${price}
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <a class="btn btn-primary" href="object.html?id=${l.id}" style="flex:1;text-align:center;">Открыть</a>
+        ${promo}
       </div>
     </article>`;
   }
