@@ -23,7 +23,7 @@
     <a href="blog.html">Заметки</a>
     <a href="coaching.html" class="active">Обучение</a>
   </nav>
-  <a href="#contact" class="header-cta">Обсудить задачу →</a>
+  <a href="#" class="header-cta js-open-tg">Обсудить задачу →</a>
 </div></header>
 
 <div class="mobile-nav" id="mobileNav">
@@ -32,7 +32,7 @@
   <a href="cases.html">Кейсы</a>
   <a href="blog.html">Заметки</a>
   <a href="coaching.html" class="active">Обучение</a>
-  <a href="#contact">Обсудить задачу</a>
+  <a href="#" class="js-open-tg" data-plan="Наставничество">Обсудить задачу</a>
 </div>
 
 <main>
@@ -51,7 +51,7 @@
             юридическое сопровождение вторички. Разбор ваших объектов.
           </p>
           <div class="hero-actions">
-            <a href="#programs" class="btn btn-primary">Программы обучения</a>
+            <a href="#" class="btn btn-primary js-open-tg" data-plan="Программы обучения">Программы обучения</a>
             <a href="#contact" class="btn btn-outline">Записаться на разбор</a>
           </div>
           <div class="hero-meta">
@@ -143,7 +143,7 @@
             брокера и кандидата юридических наук: проверки, документы, защита интересов клиента.
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Получить книгу</a>
+            <a href="#" class="btn btn-primary js-open-tg" data-plan="Книга">Получить книгу</a>
           </div>
         </div>
       </div>
@@ -224,7 +224,7 @@
           <input name="phone" placeholder="+7 ___ ___-__-__" inputmode="tel" class="form-input" />
         </div>
         <span class="form-err" id="c-err"></span>
-        <button class="btn btn-primary" type="submit">Оставить заявку</button>
+        <button class="btn btn-primary js-open-tg" type="button" data-plan="Заявка на консультацию">Оставить заявку</button>
         <span class="form-ok" id="c-ok"></span>
       </form>
       
@@ -293,5 +293,35 @@
     e.target.querySelector("button").disabled = true;
   });
 </script>
+  <!-- Telegram Modal -->
+  <div id="tgModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3>Обсудить задачу</h3>
+      <p class="modal-subtitle">Заполните форму — я свяжусь с вами в Telegram</p>
+      
+      <form data-telegram="Консультация">
+        <div class="form-group">
+          <label for="tgName-coaching.html">Ваше имя</label>
+          <input type="text" id="tgName-coaching.html" name="name" placeholder="Иван" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="tgPhone-coaching.html">Телефон</label>
+          <input type="tel" id="tgPhone-coaching.html" name="phone" placeholder="+7 (999) 000-00-00" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-full">
+          Написать в Telegram
+        </button>
+      </form>
+      
+      <p class="modal-note">
+        Нажимая кнопку, вы перейдёте в Telegram с уже заполненным сообщением
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/js/telegram-form.js"></script>
 </body>
 </html>
