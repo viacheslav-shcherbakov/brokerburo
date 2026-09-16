@@ -3,51 +3,282 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Обучение и наставничество — Бюро Вячеслава Щербакова</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Обучение и наставничество — BrokerBuro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style-premium.css" />
 </head>
 <body>
-<header class="site-header"><div class="container">
-  <a class="logo" href="index.html">Бюро Вячеслава Щербакова</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="index.html">
+    <span class="brand-name">BrokerBuro</span>
+    <span class="brand-signature">Вячеслав Щербаков</span>
+  </a>
   <button class="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
   <nav class="nav">
-    <a href="index.html">Главная</a><a href="catalog.html">Каталог</a>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Объекты</a>
     <a href="cases.html">Кейсы</a>
-    <a href="blog.html">Блог</a>    <a href="coaching.html" class="active">Обучение</a>
+    <a href="blog.html">Заметки</a>
+    <a href="coaching.html" class="active">Обучение</a>
   </nav>
+  <a href="#contact" class="header-cta">Обсудить задачу →</a>
 </div></header>
-<main class="container">
-  <h1>Обучение и наставничество</h1>
-  <p>Для риелторов и тех, кто продаёт сам: оценка, упаковка, переговоры, юридика вторички. Разбор твоих объектов.</p>
-  <section class="perks">
-    <div class="perk"><b>Разовая консультация</b><br />20–50 тыс. ₽. Стратегия цены, риски, план продажи.</div>
-    <div class="perk"><b>Наставничество</b><br />Ведение сделки рядом: от оценки до акта. Отбор — после созвона.</div>
-    <div class="perk"><b>Для агентств</b><br />Метод скоростных продаж: оценка, контент, реклама, показы.</div>
-  </section>
-  <h2>Книга «Молчать не буду! О недвижимости»</h2>
-  <div class="detail" style="grid-template-columns:220px 1fr">
-    <div><img src="assets/img/book-cover.jpg" alt="Молчать не буду! О недвижимости — обложка" onerror="this.style.display='none'" /></div>
-    <div>
-      <p>Соавторство с 12 профессиональными брокерами. Моя глава — как дипломированного брокера и кандидата юридических наук: проверки, документы, защита интересов клиента.</p>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Главная</a>
+  <a href="catalog.html">Объекты</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="blog.html">Заметки</a>
+  <a href="coaching.html" class="active">Обучение</a>
+  <a href="#contact">Обсудить задачу</a>
+</div>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-eyebrow">ОБУЧЕНИЕ · НАСТАВНИЧЕСТВО</span>
+          <h1 class="hero-title">
+            Передаю опыт<br />
+            <span class="serif">без воды и мифов</span>
+          </h1>
+          <p class="hero-subtitle">
+            Для риелторов и тех, кто продаёт сам: оценка, упаковка, переговоры, 
+            юридическое сопровождение вторички. Разбор ваших объектов.
+          </p>
+          <div class="hero-actions">
+            <a href="#programs" class="btn btn-primary">Программы обучения</a>
+            <a href="#contact" class="btn btn-outline">Записаться на разбор</a>
+          </div>
+          <div class="hero-meta">
+            <span>Практика с 2008 года</span>
+            <span class="dot"></span>
+            <span>Кандидат юридических наук</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="portrait-wrapper">
+            <img src="assets/img/broker-portrait.jpg" alt="Вячеслав Щербаков" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22%3E%3Crect fill=%22%23E8E4DC%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Georgia%22 font-size=%2218%22 fill=%22%23777269%22%3EПортрет брокера%3C/text%3E%3C/svg%3E'" />
+            <div class="portrait-signature">
+              <div>
+                <div class="signature-name">Вячеслав Щербаков</div>
+                <div class="signature-role">Брокер · К.Ю.Н. · Наставник</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <h1>Онлайн-курс "Юрликбез для риэлтора"</h2>
-  <p>Для риелторов и тех, кто продаёт сам. <a href="https://lawlickbez.netlify.app/">Перейти на страницу курса</a></p>
-  <section class="perks">
-    <div class="perk"><b>Как устроены сделки с недвижимостью</b><br />Росреестр, банки, нотариусы, органы опеки. Основания прав, документы: что проверять и куда смотреть. Дела семейные, дети и пенсионеры.</div>
-    <div class="perk"><b>Риски, налоги, мошенники</b><br />Неисполнение договора клиентом, соглашения об авансе (задатке), судебные споры, «неожиданные» налоги, мошенничество с документами и деньгами.</div>
-    <div class="perk"><b>Как юристы зарабатывают</b><br />Сколько стоят юридические знания и навыки. Почему клиентам это важно. Как риэлтор создает дополнительную ценность. Партнерство с юристом.</div>
   </section>
 
-  <form class="lead-form" id="coach" novalidate>
-    <b>Хочу на разбор / наставничество</b>
-    <input name="name" placeholder="Имя" /><input name="phone" placeholder="+7 ___ ___-__-__" inputmode="tel" />
-    <span class="form-err" id="c-err"></span><button class="btn accent" type="submit">Оставить заявку</button>
-    <span class="form-ok" id="c-ok"></span>
-  </form>
-  <p><a class="btn ghost" href="tel:+79165841440">+7 916 584-14-40</a> <a class="btn ghost" href="https://wa.me/79165841440">WhatsApp</a> <a class="btn ghost" href="https://t.me/VAShcherbakov">TG-личка</a> <a class="btn ghost" href="https://t.me/ai_and_realtor">TG-канал</a> <a class="btn ghost" href="https://vk.ru/brokerburo">ВК-сообщество</a> <a class="btn ghost" href="https://www.cian.ru/agents/12252057/">Я на Циан</a> <a class="btn ghost" href="https://agencies.domclick.ru/agent/30328">Я на Домклик</a></p>
+  <!-- Programs Section -->
+  <section class="section" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">ФОРМАТЫ РАБОТЫ</span>
+          <h2>Выберите подходящий вариант</h2>
+        </div>
+        <p>От разовой консультации до полного наставничества в сделках</p>
+      </div>
+      
+      <div class="service-jtbd-grid coaching-grid">
+        <!-- Program 1 -->
+        <div class="service-jtbd coaching-card">
+          <span class="service-jtbd-number">01</span>
+          <h3 class="service-jtbd-title">Разовая консультация</h3>
+          <p class="service-jtbd-desc">
+            Стратегия цены, оценка рисков, план продажи объекта. 
+            Разбор вашей ситуации с конкретными рекомендациями.
+          </p>
+          <div class="coaching-price">20–50 тыс. ₽</div>
+          <a href="#contact" class="btn btn-outline" style="margin-top: 20px; width: 100%;">Записаться</a>
+        </div>
+        
+        <!-- Program 2 -->
+        <div class="service-jtbd coaching-card">
+          <span class="service-jtbd-number">02</span>
+          <h3 class="service-jtbd-title">Наставничество</h3>
+          <p class="service-jtbd-desc">
+            Ведение сделки рядом: от оценки до акта приёма-передачи. 
+            Отбор участников — после предварительного созвона.
+          </p>
+          <div class="coaching-price">Индивидуально</div>
+          <a href="#contact" class="btn btn-outline" style="margin-top: 20px; width: 100%;">Подать заявку</a>
+        </div>
+        
+        <!-- Program 3 -->
+        <div class="service-jtbd coaching-card">
+          <span class="service-jtbd-number">03</span>
+          <h3 class="service-jtbd-title">Для агентств</h3>
+          <p class="service-jtbd-desc">
+            Метод скоростных продаж: оценка, контент, реклама, показы. 
+            Обучение команды и внедрение процессов.
+          </p>
+          <div class="coaching-price">По запросу</div>
+          <a href="#contact" class="btn btn-outline" style="margin-top: 20px; width: 100%;">Обсудить</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section class="section book-section">
+    <div class="container">
+      <div class="book-showcase">
+        <div class="book-image-wrapper">
+          <img src="assets/img/book-cover.jpg" alt="Молчать не буду! О недвижимости — обложка" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="case-image-placeholder" style="display: none;">Обложка книги</div>
+          <div class="object-badge">КНИГА</div>
+        </div>
+        <div class="book-details">
+          <span class="section-kicker">ПУБЛИКАЦИЯ</span>
+          <h2 class="serif" style="font-size: 42px; margin-bottom: 24px;">«Молчать не буду! О недвижимости»</h2>
+          <p style="font-size: 16px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px;">
+            Соавторство с 12 профессиональными брокерами. Моя глава — как дипломированного 
+            брокера и кандидата юридических наук: проверки, документы, защита интересов клиента.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Получить книгу</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online Course Section -->
+  <section class="section" style="background: var(--bg-paper);">
+    <div class="container">
+      <div class="section-header compact">
+        <div>
+          <span class="section-kicker">ОНЛАЙН-КУРС</span>
+          <h2>Юрликбез для риэлтора</h2>
+        </div>
+        <a href="https://lawlickbez.netlify.app/" target="_blank" class="btn btn-link">
+          Перейти на страницу курса <span class="arrow">→</span>
+        </a>
+      </div>
+      
+      <div class="service-jtbd-grid">
+        <!-- Module 1 -->
+        <div class="service-jtbd">
+          <span class="service-jtbd-number">МОДУЛЬ 01</span>
+          <h3 class="service-jtbd-title">Как устроены сделки</h3>
+          <p class="service-jtbd-desc">
+            Росреестр, банки, нотариусы, органы опеки. Основания прав, документы: 
+            что проверять и куда смотреть. Дела семейные, дети и пенсионеры.
+          </p>
+        </div>
+        
+        <!-- Module 2 -->
+        <div class="service-jtbd">
+          <span class="service-jtbd-number">МОДУЛЬ 02</span>
+          <h3 class="service-jtbd-title">Риски, налоги, мошенники</h3>
+          <p class="service-jtbd-desc">
+            Неисполнение договора клиентом, соглашения об авансе (задатке), судебные споры, 
+            «неожиданные» налоги, мошенничество с документами и деньгами.
+          </p>
+        </div>
+        
+        <!-- Module 3 -->
+        <div class="service-jtbd">
+          <span class="service-jtbd-number">МОДУЛЬ 03</span>
+          <h3 class="service-jtbd-title">Как юристы зарабатывают</h3>
+          <p class="service-jtbd-desc">
+            Сколько стоят юридические знания и навыки. Почему клиентам это важно. 
+            Как риэлтор создает дополнительную ценность. Партнерство с юристом.
+          </p>
+        </div>
+        
+        <!-- Module 4 -->
+        <div class="service-jtbd">
+          <span class="service-jtbd-number">МОДУЛЬ 04</span>
+          <h3 class="service-jtbd-title">Практика и кейсы</h3>
+          <p class="service-jtbd-desc">
+            Разбор реальных ситуаций из практики. Типичные ошибки и как их избежать. 
+            Алгоритмы действий в сложных случаях.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">ЗАПИСАТЬСЯ</span>
+          <h2>Хочу на разбор / наставничество</h2>
+        </div>
+        <p>Оставьте заявку — я свяжусь с вами в течение дня</p>
+      </div>
+      
+      <form class="lead-form premium-form" id="coach" novalidate>
+        <div class="form-row">
+          <input name="name" placeholder="Имя" class="form-input" />
+          <input name="phone" placeholder="+7 ___ ___-__-__" inputmode="tel" class="form-input" />
+        </div>
+        <span class="form-err" id="c-err"></span>
+        <button class="btn btn-primary" type="submit">Оставить заявку</button>
+        <span class="form-ok" id="c-ok"></span>
+      </form>
+      
+      <div class="contact-links">
+        <a class="btn btn-outline" href="tel:+79165841440">+7 916 584-14-40</a>
+        <a class="btn btn-outline" href="https://wa.me/79165841440" target="_blank">WhatsApp</a>
+        <a class="btn btn-outline" href="https://t.me/VAShcherbakov" target="_blank">TG-личка</a>
+        <a class="btn btn-outline" href="https://t.me/ai_and_realtor" target="_blank">TG-канал</a>
+        <a class="btn btn-outline" href="https://vk.ru/brokerburo" target="_blank">ВК-сообщество</a>
+        <a class="btn btn-outline" href="https://www.cian.ru/agents/12252057/" target="_blank">Я на Циан</a>
+        <a class="btn btn-outline" href="https://agencies.domclick.ru/agent/30328" target="_blank">Я на Домклик</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><div class="container">Бюро Вячеслава Щербакова · <a href="index.html">на главную</a> · <a href="https://www.cian.ru/agents/12252057/">ЦИАН</a> · <a href="https://agencies.domclick.ru/agent/30328">Домклик</a> · <a href="https://vk.ru/brokerburo">ВК</a> · <a href="https://t.me/ai_and_realtor">TG-канал</a> · <a href="https://t.me/VAShcherbakov">TG-личка</a></div></footer>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-name">BrokerBuro</span>
+          <span class="brand-signature">Вячеслав Щербаков</span>
+        </a>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 16px; line-height: 1.6;">
+          Персональное брокерское бюро<br />
+          для сложных сделок с недвижимостью
+        </p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-column">
+          <h4 style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">Навигация</h4>
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Объекты</a>
+          <a href="cases.html">Кейсы</a>
+          <a href="blog.html">Заметки</a>
+          <a href="coaching.html">Обучение</a>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">Площадки</h4>
+          <a href="https://www.cian.ru/agents/12252057/" target="_blank">ЦИАН</a>
+          <a href="https://agencies.domclick.ru/agent/30328" target="_blank">Домклик</a>
+          <a href="https://vk.ru/brokerburo" target="_blank">ВК</a>
+          <a href="https://t.me/ai_and_realtor" target="_blank">TG-канал</a>
+          <a href="https://t.me/VAShcherbakov" target="_blank">TG-личка</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--line-sand); margin-top: 40px; padding-top: 24px; font-size: 12px; color: var(--text-muted);">
+      © 2024 BrokerBuro. Все права защищены.
+    </div>
+  </div>
+</footer>
+
 <script type="module">
   import "./assets/js/common.js";
   document.getElementById("coach").addEventListener("submit", e => {
