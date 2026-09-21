@@ -1054,10 +1054,35 @@ p.lead {
    NOTES SECTION — заметки брокера
    ============================================ */
 
-.notes {
-  padding: 120px 0;
+/* ============================================
+   NOTES PAGE — Заметки брокера
+   ============================================ */
+
+.notes-page {
+  min-height: 100vh;
 }
 
+.notes-hero {
+  padding: 160px 0 80px;
+  background: var(--bg-paper);
+  border-bottom: 1px solid var(--line-sand);
+}
+
+.notes-hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+.notes-subtitle {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 580px;
+}
+
+/* Notes Grid */
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1115,6 +1140,20 @@ p.lead {
 .note-read-more:hover {
   color: var(--accent-terracotta);
   border-color: var(--accent-terracotta);
+}
+
+/* Q&A Section */
+.qa-section {
+  padding: 100px 0;
+  background: var(--bg-ivory);
+}
+
+.qa-card {
+  background: var(--white);
+  padding: 60px;
+  border: 1px solid var(--line-sand);
+  border-radius: var(--radius-md);
+  max-width: 900px;
 }
 
 /* ============================================
@@ -1719,5 +1758,73 @@ p.lead {
   
   .modal-content h3 {
     font-size: 24px;
+  }
+}
+
+/* Notes page responsive */
+@media (max-width: 1024px) {
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .note-card:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .qa-card {
+    padding: 40px 24px;
+  }
+  
+  .notes-hero {
+    padding: 120px 0 60px;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .note-card {
+    border-right: none;
+    border-bottom: 1px solid var(--line-sand);
+  }
+  
+  .note-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Notes page responsive */
+@media (max-width: 1024px) {
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .note-card:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .qa-card {
+    padding: 40px 24px;
+  }
+  
+  .notes-hero {
+    padding: 120px 0 60px;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .note-card {
+    border-right: none;
+    border-bottom: 1px solid var(--line-sand);
+  }
+  
+  .note-card:last-child {
+    border-bottom: none;
   }
 }

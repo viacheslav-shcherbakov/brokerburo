@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Заметки — BrokerBuro</title>
-  <meta name="description" content="Разборы рынка, юридические вопросы, ответы клиентам. Коротко и по делу." />
+  <meta name="description" content="Заметки брокера о недвижимости — без лишнего шума. Разборы рынка, юридические вопросы, ответы клиентам." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style-premium.css" />
 </head>
 <body>
@@ -41,25 +41,47 @@
   </div>
 </header>
 
-<main class="container section">
-  <div class="section-header">
-    <div>
-      <span class="section-kicker">БЛОГ</span>
-      <h2>Личный блог</h2>
+<main class="notes-page">
+  <!-- Notes Header -->
+  <section class="notes-hero">
+    <div class="container">
+      <span class="section-kicker">ЗАМЕТКИ БРОКЕРА</span>
+      <h1>О недвижимости — без лишнего шума.</h1>
+      <p class="notes-subtitle">
+        Разборы рынка, юридические вопросы, ответы клиентам. 
+        Коротко и по делу — из практики BrokerBuro.
+      </p>
     </div>
-    <p>Разборы рынка, юридические вопросы, ответы клиентам. Коротко и по делу.</p>
-  </div>
+  </section>
   
-  <div class="notes-grid" id="posts"><p>Загружаю…</p></div>
-  
-  <div style="margin-top:60px;padding:48px;background:var(--bg-paper);border-radius:8px;">
-    <h3 style="font-family:var(--font-serif);font-size:clamp(24px,3vw,32px);margin-bottom:16px;">Вопрос–ответ с форума Циан</h3>
-    <p style="margin-bottom:24px;"><strong>«Насколько реалистичны мои ожидания?»</strong> — продажа на Фрунзенской наб., 115 м².<br />Мой ответ: продавайте, когда это действительно необходимо; сформулируйте задачу; вспомните триггер первой мысли о продаже. Цена за метр ничего не решает — решают цель и профессионализм. Без опыта многомиллионных сделок — оплатите развёрнутую консультацию, в рекламу заложите 1–2% цены.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <a class="btn btn-primary" href="https://www.cian.ru/agents/12252057/">Все советы на Циан →</a>
-      <a class="btn btn-outline" href="tel:+79165841440">Задать вопрос: +7 916 584-14-40</a>
+  <!-- Notes Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="notes-grid" id="posts"><p>Загружаю…</p></div>
     </div>
-  </div>
+  </section>
+  
+  <!-- Q&A Section -->
+  <section class="qa-section">
+    <div class="container">
+      <div class="qa-card">
+        <div>
+          <span class="section-kicker">ВОПРОС–ОТВЕТ</span>
+          <h2 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,40px);margin-bottom:20px;">Ответы на вопросы с форума Циан</h2>
+          <p style="font-size:16px;line-height:1.7;color:var(--text-muted);max-width:680px;margin-bottom:28px;">
+            <strong>«Насколько реалистичны мои ожидания?»</strong> — продажа на Фрунзенской наб., 115 м².<br /><br />
+            Мой ответ: продавайте, когда это действительно необходимо; сформулируйте задачу; вспомните триггер первой мысли о продаже. 
+            Цена за метр ничего не решает — решают цель и профессионализм. Без опыта многомиллионных сделок — оплатите развёрнутую консультацию, 
+            в рекламу заложите 1–2% цены.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://www.cian.ru/agents/12252057/" target="_blank" rel="noopener">Все советы на Циан →</a>
+            <a class="btn btn-outline" href="tel:+79165841440">Задать вопрос: +7 916 584-14-40</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
